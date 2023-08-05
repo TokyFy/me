@@ -38,7 +38,7 @@ export default function Home() {
 
                 <div>
                     <h1 className="font-grotesk font-medium text-3xl">Fy Niaina Toky</h1>
-                    <h2 className="text-neutral-500 dark:text-neutral-400">Frontend developer in Madagascar,</h2>
+                    <h2 className="text-neutral-500 dark:text-neutral-400">Frontend developer from Madagascar,</h2>
                     <p className="text-neutral-500 dark:text-neutral-400">He/Him , Level 22 with Life (yo xd)</p>
                 </div>
 
