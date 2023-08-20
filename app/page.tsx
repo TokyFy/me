@@ -2,23 +2,22 @@
 
 /* eslint-disable react/no-unescaped-entities */
 
-
 import Image from 'next/image';
-import {ArrowUpRight , Moon , Sun} from "lucide-react";
+import {ArrowUpRight, Moon, Sun} from "lucide-react";
 import {useState} from "react";
-
 
 
 export default function Home() {
 
     const [dark, setDark] = useState(false);
+
     function switchTheme() {
         document.documentElement.classList.toggle("dark");
         setDark(!dark)
     }
 
     return (
-        <main className="container mx-auto mt-12 lg:mt-32 px-6 dark:text-neutral-50">
+        <main className="container mx-auto my-12 lg:my-32 px-6 dark:text-neutral-50">
             <div className="max-w-xl flex flex-col gap-6">
                 <div className="flex justify-between items-center">
                     <div className="relative max-w-max border-2 rounded-full border-neutral-300 dark:bg-neutral-100">
@@ -31,7 +30,8 @@ export default function Home() {
                             <Image height={24} width={24} src={"/assets/hayra.svg"} alt={"Hayra Logo"}/>
                         </a>
                     </div>
-                    <div onClick={()=> switchTheme()} className="p-2 bg-neutral-200 rounded-full cursor-pointer dark:bg-neutral-900">
+                    <div onClick={() => switchTheme()}
+                         className="p-2 bg-neutral-200 rounded-full cursor-pointer dark:bg-neutral-900">
                         {dark ? <Moon/> : <Sun/>}
                     </div>
                 </div>
