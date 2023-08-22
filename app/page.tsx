@@ -17,8 +17,16 @@ export default function Home() {
     }
 
     return (
-        <main className="container mx-auto my-12 lg:my-32 px-6 dark:text-neutral-50">
-            <div className="max-w-xl flex flex-col gap-6">
+        <main className="container mx-auto mb-12 lg:mb-32 px-6 dark:text-neutral-50">
+            <div className="max-w-xl flex flex-col gap-6 ">
+                <div className="font-mono text-[13px] border-b border-b-neutral-600 border-dashed pb-2 font-bold my-12">
+                    <ul className="flex justify-between text-neutral-500 dark:text-neutral-400">
+                        <li className="cursor-pointer hover:underline hover:text-neutral-800 dark:hover:text-neutral-200">/Blogs</li>
+                        <li className="cursor-pointer hover:underline hover:text-neutral-800 dark:hover:text-neutral-200">/Musics</li>
+                        <li className="cursor-pointer hover:underline hover:text-neutral-800 dark:hover:text-neutral-200">/Guestbooks</li>
+                        <li className="cursor-pointer hover:underline hover:text-neutral-800 dark:hover:text-neutral-200">/Photos</li>
+                    </ul>
+                </div>
                 <div className="flex justify-between items-center">
                     <div className="relative max-w-max border-2 rounded-full border-neutral-300 dark:bg-neutral-100">
                         <Image
@@ -30,10 +38,10 @@ export default function Home() {
                             <Image height={24} width={24} src={"/assets/hayra.svg"} alt={"Hayra Logo"}/>
                         </a>
                     </div>
-                    <div onClick={() => switchTheme()}
-                         className="p-2 bg-neutral-200 rounded-full cursor-pointer dark:bg-neutral-900">
+                    <button onClick={() => switchTheme()}
+                            className="p-2 bg-neutral-200 rounded-full cursor-pointer dark:bg-neutral-900">
                         {dark ? <Moon/> : <Sun/>}
-                    </div>
+                    </button>
                 </div>
 
                 <div>
@@ -41,6 +49,7 @@ export default function Home() {
                     <h2 className="text-neutral-500 dark:text-neutral-400">Frontend developer from Madagascar,</h2>
                     <p className="text-neutral-500 dark:text-neutral-400">He/Him , Level 22 with Life (yo xd)</p>
                 </div>
+
 
                 <div className="flex flex-col gap-5">
                     <p>
@@ -65,7 +74,7 @@ export default function Home() {
 
                 <div>
                     <h2 className="text-neutral-500 dark:text-neutral-400">Contact</h2>
-                    <div className="divide-y divide-dashed my-3 dark:divide-neutral-500">
+                    <div className="divide-y divide-dashed my-3 divide-neutral-600 dark:divide-neutral-500">
                         <Contact platform="Github" link="github.com/TokyFy"/>
                         <Contact platform="Mail" link="tokyfy@outlook.com"/>
                         <Contact platform="Instagram" link="instagram.com/_tookyy"/>
@@ -79,7 +88,7 @@ export default function Home() {
 
 function Contact({platform, link}: { platform: string, link: string }) {
     return <>
-        <a className="group flex py-2 hover:bg-neutral-100 hover:text-neutral-900 text-neutral-400 dark:text-neutral-300"
+        <a className="group flex py-2 hover:bg-neutral-300 hover:text-neutral-900 text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-900"
            href={`https://${link}`}
            target="_blank" rel="noopener noreferrer">
             <p className="grow group-hover:translate-x-1 transition-all duration-200 ease-in">{platform}</p>
