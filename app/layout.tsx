@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import NavBar from "@components/navBar";
 
 export const metadata: Metadata = {
   title: 'Toky FY',
@@ -13,7 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-jost font-normal dark:bg-black">{children}</body>
+      <body className="font-jost font-normal dark:bg-black no-scrollbar">
+      <main className="container mx-auto mb-12 lg:mb-32 px-6 dark:text-neutral-50">
+        <div className="max-w-xl flex flex-col gap-6 ">
+          <NavBar/>
+          {children}
+        </div>
+      </main>
+      </body>
     </html>
   )
 }
