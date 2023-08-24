@@ -27,11 +27,10 @@ function NavItems({route , href} : {route : string , href ?: string}) {
 
     useEffect(()=>{
         pathname === (href || route) ? setIsActive(true) : setIsActive(false);
-        console.log(pathname)
     }, [pathname, href, route])
 
     return (
-        <li className={`cursor-pointer hover:underline hover:text-neutral-800 dark:hover:text-neutral-200 ${isActive ? "underline text-neutral-950" : ""}`} >
+        <li className={`cursor-pointer hoverS:underline hover:text-neutral-800 dark:hover:text-neutral-200 ${isActive ? "underline text-[#9cf62b]" : ""}`} >
             <Link href={href || route}>
                 {route}
             </Link>

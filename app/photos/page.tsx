@@ -8,7 +8,8 @@ export default function Blogs() {
         <>
             <div className="flex flex-col gap-5">
                 <p>
-                    soonnnn ✨
+                    Enter the realm of my photographic collection, where each image weaves a story of its own, inviting
+                    you to journey through moments frozen in time. 📸 ✨
                 </p>
             </div>
         </>

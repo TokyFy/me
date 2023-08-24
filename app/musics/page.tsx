@@ -78,10 +78,12 @@ function Music({image , title , artist} : musicProps) {
     return <div className="group p-2 cursor-pointer bg-neutral-100 border border-dashed border-transparent hover:border-neutral-400 rounded w-full m-auto">
         <div className="relative aspect-square">
             <Image
-                className={"object-cover grayscale group-hover:grayscale-0"}
+                className={"object-cover grayscale-0 group-hover:grayscale-0"}
                 src={image}
                 alt={"Album cover Alala"}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
             />
         </div>
         <div className="mt-2 flex items-center">
