@@ -8,7 +8,7 @@ export default function Blogs() {
 
     return (
         <>
-            <div className="flex flex-col gap-5 [&>div:nth-child(odd)]:flex-row-reverse">
+            <div className="flex flex-col gap-5  [&>div:nth-child(odd)]:flex-row-reverse ">
                 <p>
                     Enter the realm of my photographic collection, where each image weaves a story of its own, inviting
                     you to journey through moments frozen in time. 📸 ✨
@@ -51,7 +51,7 @@ type Photo = {
 
 function Photo({url, description, date}: Photo) {
     return (
-        <div className="flex items-end gap-8 py-12">
+        <div className="flex flex-col items-end gap-8 py-12">
             <div>
                 <Image
                     width={300}
