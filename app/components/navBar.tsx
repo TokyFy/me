@@ -9,8 +9,8 @@ function NavBar() {
     return (
         <div className="font-mono text-[13px] border-b border-b-neutral-600 border-dashed pb-2 font-bold my-12">
             <ul className="flex justify-between text-neutral-500 dark:text-neutral-400">
-                <NavItems route={"/home"} href={"/"}/>
-                <NavItems route={"/blogs"}/>
+                <NavItems route={"/"}/>
+                {/*<NavItems route={"/blogs"}/>*/}
                 <NavItems route={"/musics"}/>
                 <NavItems route={"/guestbooks"}/>
                 <NavItems route={"/photos"}/>
