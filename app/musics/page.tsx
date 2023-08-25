@@ -10,6 +10,7 @@ type musicProps = {
     artist: string
 }
 
+
 export default function Musics() {
 
     return (
