@@ -78,7 +78,7 @@ export default function Musics() {
 
 function Music({image, title, artist}: musicProps) {
     return <div
-        className="group p-2 cursor-pointer bg-neutral-200 dark:bg-neutral-900 border border-dashed border-transparent hover:border-neutral-400 rounded w-full m-auto">
+        className="group p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-900 border border-dashed border-transparent hover:border-neutral-400 rounded w-full m-auto">
         <div className="relative aspect-square">
             <Image
                 className={"object-cover grayscale-0 group-hover:grayscale-0"}

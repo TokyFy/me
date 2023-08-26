@@ -66,7 +66,7 @@ type Photo = {
 
 function Photo({url, description, date}: Photo) {
     return (
-        <div className="flex flex-col md:flex-row items-end gap-8 py-12">
+        <div className="group flex flex-col md:flex-row items-end gap-8 py-12">
             <div>
                 <Image
                     width={300}
@@ -74,7 +74,7 @@ function Photo({url, description, date}: Photo) {
                     src={url}
                     alt={""}/>
             </div>
-            <div>
+            <div className="group-hover:underline">
                 <p>{description}</p>
                 <p className="opacity-50 text-sm">{date}</p>
             </div>

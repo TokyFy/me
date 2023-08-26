@@ -17,7 +17,7 @@ function Contact() {
 
 function ContactLink({platform, link}: { platform: string, link: string }) {
     return <>
-        <a className="group flex py-2 hover:bg-neutral-300 hover:text-neutral-900 text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-900"
+        <a className="group flex py-2 hover:bg-[#9cf62b] hover:text-neutral-900 text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-900"
            href={`https://${link}`}
            target="_blank" rel="noopener noreferrer">
             <p className="grow group-hover:translate-x-1 transition-all duration-200 ease-in">{platform}</p>

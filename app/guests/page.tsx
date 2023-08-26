@@ -1,7 +1,7 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
-export default function Guestbooks() {
+export default function Guests() {
 
     return (
         <>
