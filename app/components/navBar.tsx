@@ -8,25 +8,17 @@ function NavBar() {
 
     return (
         <div className="font-mono text-[13px] border-b border-b-neutral-600 border-dashed pb-2 font-bold my-12">
-            <ul className="flex text-neutral-500 dark:text-neutral-400 flex-wrap gap-12 gap-y-1">
+            <ul className="flex justify-between text-neutral-500 dark:text-neutral-400 flex-wrap gap-12 gap-y-1">
                 <NavItems route={"/"}/>
                 <NavItems route={"/blogs"}/>
-                <NavItems route={"/musics"}/>
                 <NavItems route={"/guests"}/>
-                <NavItems route={"/photos"}/>
-                <NavItems route={"/projects"}/>
-                <NavItems route={"/animes"}/>
-                <NavItems route={"/dreams"}/>
-                <NavItems route={"/arts"}/>
-                <NavItems route={"/links"}/>
-                <NavItems route={"/books"}/>
-                <NavItems route={"/object"}/>
+                <NavItems route={"/..."} href={"/others"}/>
             </ul>
         </div>
     );
 }
 
-function NavItems({route , href} : {route : string , href ?: string}) {
+export function NavItems({route , href} : {route : string , href ?: string}) {
 
     const pathname = usePathname()
 
