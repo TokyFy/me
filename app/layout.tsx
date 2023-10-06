@@ -17,16 +17,16 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className="font-jost font-normal dark:bg-black no-scrollbar">
-        <main className="container mx-auto mb-12 lg:mb-32 px-6 dark:text-neutral-50">
+        <main className="mb-12 lg:mb-32 dark:text-neutral-50">
             <NextTopLoader
                 shadow=""
                 color="#9cf62b"
                 showSpinner={false}
             />
-            <div className="max-w-xl flex flex-col gap-6 ">
+            <div>
                 <NavBar/>
-                {children}
             </div>
+            {children}
         </main>
         </body>
         </html>
