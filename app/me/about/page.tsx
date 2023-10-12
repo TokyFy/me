@@ -8,7 +8,7 @@ import {A} from "@components/Micro";
 export default function Home() {
 
     return (
-        <div className="max-w-5xl flex flex-col gap-6 py-8 mx-auto">
+        <div className="max-w-5xl flex flex-col gap-6 py-8 px-8 mx-auto">
             <div className="flex justify-between items-center">
                 <div className="relative max-w-max border-2 rounded-full border-neutral-300 dark:bg-neutral-100">
                     <Image

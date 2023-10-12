@@ -15,13 +15,13 @@ export default function Musics() {
 
     return (
         <>
-            <div className="flex flex-col gap-5">
+            <div className="max-w-xl mx-auto py-12 px-8 flex flex-col gap-3">
                 <div>
                     Music is a daily companion for me. To switch off my head after a long day, to focus at work or to
                     feel alive at concerts.
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 py-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 py-8">
                     <Music
                         image={"https://e-cdn-images.dzcdn.net/images/cover/f60623c447617dd9db22014cbac44bda/264x264-000000-80-0-0.jpg"}
                         title={"Andro marary"}

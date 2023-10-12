@@ -2,6 +2,7 @@ import './globals.css'
 import type {Metadata} from 'next'
 import NavBar from "@components/navBar";
 import NextTopLoader from 'nextjs-toploader';
+import React from "react";
 
 
 export const metadata: Metadata = {
@@ -9,15 +10,11 @@ export const metadata: Metadata = {
     description: 'Frontend developer from Madagascar',
 }
 
-export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body className="font-jost font-normal dark:bg-black no-scrollbar">
-        <main className="mb-12 lg:mb-32 dark:text-neutral-50">
+        <main className="dark:text-neutral-50">
             <NextTopLoader
                 shadow=""
                 color="#9cf62b"

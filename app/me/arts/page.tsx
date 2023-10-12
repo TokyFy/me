@@ -6,10 +6,10 @@ export default function Arts() {
 
     return (
         <>
-            <div className="flex flex-col gap-5">
-                <p>
-                    All the thing that inspire my minds 🌌
-                </p>
+            <div className="flex flex-col gap-5 whitespace-nowrap">
+                <pre className="whitespace-pre-line">
+                    
+                </pre>
             </div>
         </>
     )

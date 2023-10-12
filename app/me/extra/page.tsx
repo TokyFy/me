@@ -18,15 +18,15 @@ export default function Others() {
 
                 <div className="my-4">
                     <ul className="flex flex-col gap-2 text-xl text-neutral-500">
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/photos"}>/photos</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/musics"}>/musics</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/projects"}>/projects</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/animes"}>/animes</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/dreams"}>/dreams</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/arts"}>/arts</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/links"}>/links</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/books"}>/books</Link>
-                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/object"}>/object</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/photos"}>/photos</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/musics"}>/musics</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/projects"}>/projects</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/animes"}>/animes</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/dreams"}>/dreams</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/arts"}>/arts</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/links"}>/links</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/books"}>/books</Link>
+                        <Link className="hover:underline hover:text-neutral-950 dark:hover:text-white w-max" href={"/me/object"}>/object</Link>
                     </ul>
                 </div>
             </div>

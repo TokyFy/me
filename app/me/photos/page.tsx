@@ -9,7 +9,7 @@ export default function Blogs() {
     return (
         <>
             <div
-                className="flex flex-col gap-5  [&>div:nth-child(odd)]:flex-col [&>div:nth-child(odd)]:md:flex-row-reverse ">
+                className="max-w-3xl mx-auto flex flex-col py-12 px-8 gap-5  [&>div:nth-child(odd)]:flex-col [&>div:nth-child(odd)]:md:flex-row-reverse ">
                 <p>
                     Enter the realm of my photographic collection, where each image weaves a story of its own, inviting
                     you to journey through moments frozen in time. 📸 ✨

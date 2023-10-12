@@ -5,7 +5,7 @@ export default function Guests() {
 
     return (
         <>
-            <div className="flex flex-col gap-5">
+            <div className="max-w-xl flex flex-col gap-5 mx-auto py-12">
                 <p>
                     You can live me a nice message here if you want !!
                 </p>
