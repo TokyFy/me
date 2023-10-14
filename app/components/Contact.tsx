@@ -4,7 +4,7 @@ import {ArrowUpRight} from "lucide-react";
 function Contact() {
     return (
         <div>
-            <h2 className="text-neutral-500 dark:text-neutral-400">Contact</h2>
+            <h2 className="text-neutral-500 dark:text-neutral-400 ">Contact</h2>
             <div className="divide-y divide-dashed my-3 divide-neutral-600 dark:divide-neutral-500">
                 <ContactLink platform="Github" link="github.com/TokyFy"/>
                 <ContactLink platform="Mail" link="tokyfy@outlook.com"/>
