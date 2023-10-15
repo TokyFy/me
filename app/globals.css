@@ -29,6 +29,10 @@
   background-color: #282828;
 }
 
+#nprogress .bar {
+  height: 1px!important;
+}
+
 @media (prefers-color-scheme: dark) {
   *::selection {
     color: #282828;
