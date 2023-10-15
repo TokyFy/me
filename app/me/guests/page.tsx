@@ -1,40 +1,38 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
+import Image from "next/image";
+
 export default function Guests() {
 
     return (
         <>
-            <div className="max-w-xl flex flex-col gap-5 mx-auto py-12">
-                <p>
-                    You can live me a nice message here if you want !!
+            <div className="max-w-xl flex flex-col gap-2 py-12">
+
+                <p className="font-jost text-sm">
+                    Ask Me Anything (^-^)
                 </p>
 
-                <div className="flex flex-col gap-2 my-6">
-                    <div className="w-full p-2 border border-dashed border-neutral-400 rounded-md">
-                        <p>Ohh nice website 👽</p>
-                        <div className="flex justify-between">
-                            <p className="text-sm opacity-60">By Ushi</p>
-                            <p className="text-sm opacity-60">25 August 2023</p>
+                <div className="flex flex-col my-6 divide-y divide-dashed">
+                    <div className="w-full py-2">
+                        <p>Ohh nice website :d</p>
+                        <div className="justify-between flex">
+                            <p className="text-sm opacity-60">Pico</p>
+                            <p className="font-jost text-[12px] opacity-25">25 . 02 . 2023</p>
                         </div>
                     </div>
-                    <div className="w-full p-2 border border-dashed border-neutral-400 rounded-md">
-                        <p>Yepppp 🥳</p>
-                        <div className="flex justify-between">
-                            <p className="text-sm opacity-60">By Lalaina</p>
-                            <p className="text-sm opacity-60">26 August 2023</p>
-                        </div>
-                    </div>
-                    <div className="w-full p-2 border border-dashed border-neutral-400 rounded-md">
+
+                    <div className="w-full py-2">
                         <p>GG Xd</p>
                         <div className="flex justify-between">
-                            <p className="text-sm opacity-60">By Ony</p>
-                            <p className="text-sm opacity-60">26 August 2023</p>
+                            <p className="text-sm opacity-60">Ein</p>
+                            <p className="font-jost text-[12px] opacity-25">25 . 02 . 2023</p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button className="w-full bg-neutral-950 dark:bg-neutral-800 text-neutral-200 p-2 rounded">
+
+                <div className="flex items-center">
+                    <button className="font-jost text-sm text-neutral-800">
                         Sign up with <span className="underline">Google</span> or <span
                         className="underline">Github</span> to write a message
                     </button>

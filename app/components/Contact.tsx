@@ -1,33 +1,50 @@
 import React from 'react';
-import {ArrowUpRight} from "lucide-react";
+import {ArrowUpRight, CornerUpRight, CornerUpLeft, CornerRightUp} from "lucide-react";
+import Link from "next/link";
 
 function Contact() {
     return (
         <div>
-            <div className="divide-y divide my-3 divide-neutral-200 dark:divide-neutral-500">
+            <div className="my-3">
                 <ContactLink platform="Github" link="github.com/TokyFy"/>
                 <ContactLink platform="Mail" link="tokyfy@outlook.com"/>
                 <ContactLink platform="Instagram" link="instagram.com/_tookyy"/>
                 <ContactLink platform="Twiter" link="twitter.com/TokyFy_"/>
             </div>
+            <div>
+                <ContactLink intern platform="Musics" link="/me/musics"/>
+                <ContactLink intern platform="Animes" link="#"/>
+                <ContactLink intern platform="Photos" link="/me/photos"/>
+                <ContactLink intern platform="Bookmarks" link="#"/>
+                <ContactLink intern platform="Books" link="#"/>
+                <ContactLink intern platform="Projects" link="#"/>
+            </div>
         </div>
     );
 }
 
-function ContactLink({platform, link}: { platform: string, link: string }) {
+function ContactLink({platform, link, intern}: { platform: string, link: string, intern?: boolean }) {
     return <>
-        <a className="group flex py-2 hover:bg-neutral-900 hover:text-neutral-50 text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-900 text-sm"
-           href={`https://${link}`}
-           target="_blank" rel="noopener noreferrer">
-            <p className="grow group-hover:translate-x-1 transition-all duration-200 ease-in">{platform}</p>
-            <p className="flex gap-1 hover:underline group-hover:-translate-x-1 transition-all duration-200 ease-in">
-                <span>{link}</span>
-                <ArrowUpRight
-                    className="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in"
-                    size={14}
-                />
+        <Link className="group pt-1 flex text-sm hover:underline text-neutral-700 dark:text-neutral-300"
+           href={`${intern ? "" : "https://"}${link}`}
+           target={`${intern ? "" : "_blank"}`} rel="noopener noreferrer">
+            <p className="flex gap-1 hover:underline">
+                <span>{platform}</span>
+                {
+                    intern ?
+                        <ArrowUpRight
+                            className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in"
+                            size={13}
+                        />
+                        :
+                        <CornerRightUp
+                            className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in"
+                            size={13}
+                        />
+
+                }
             </p>
-        </a>
+        </Link>
     </>
 }
 

@@ -15,13 +15,13 @@ export default function Musics() {
 
     return (
         <>
-            <div className="max-w-xl mx-auto py-12 px-8 flex flex-col gap-3">
-                <div>
+            <div className="max-w-md py-12 flex flex-col gap-2">
+                <div className="text-sm">
                     Music is a daily companion for me. To switch off my head after a long day, to focus at work or to
                     feel alive at concerts.
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 py-8">
+                <div className="flex flex-col divide-y divide-dashed">
                     <Music
                         image={"https://e-cdn-images.dzcdn.net/images/cover/f60623c447617dd9db22014cbac44bda/264x264-000000-80-0-0.jpg"}
                         title={"Andro marary"}
@@ -77,29 +77,27 @@ export default function Musics() {
 }
 
 function Music({image, title, artist}: musicProps) {
-    return <div
-        className="group p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-900 border border-dashed border-transparent hover:border-neutral-400 rounded w-full m-auto">
-        <div className="relative aspect-square">
-            <Image
-                className={"object-cover grayscale-0 group-hover:grayscale-0"}
-                src={image}
-                alt={"Album cover Alala"}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority
-            />
-        </div>
-        <div className="mt-2 flex items-center">
-            <div className="grow text-sm">
+    return (
+        <div className="group py-2 flex">
+            <div className="flex flex-col justify-end text-sm">
                 <p className="font-medium group-hover:underline">{title}</p>
-                <p className="font-grotesk opacity-50 ">{artist}</p>
+                <p className="font-grotesk opacity-50 text-[12px]">{artist}</p>
             </div>
-            <div>
-                <div
-                    className="h-max w-max p-2 rounded-full border-2 border-transparent opacity-20 group-hover:-rotate-90 group-hover:opacity-70">
-                    <PlayCircle size={18}/>
+            <div className="ml-auto relative flex items-center justify-center w-12 aspect-square overflow-visible border-neutral-200 rounded-sm group-hover:-translate-x-3 group-hover:-rotate-6 duration-500">
+                <Image
+                    width={196}
+                    height={196}
+                    className={"w-full h-auto scale-110"}
+                    src={"/assets/cover.jpg"}
+                    alt={"Album cover Alala"}
+                    priority
+                />
+                <div className="absolute aspect-square w-9 bg-slate-800 flex items-center justify-center rounded-full -z-[1] group-hover:translate-x-6 duration-500 ease-in-out">
+                    <div className="bg-white w-3 rounded-full aspect-square">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    )
 }

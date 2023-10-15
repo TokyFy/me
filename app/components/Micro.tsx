@@ -30,5 +30,12 @@ function I({href , value} : A_props) {
     );
 }
 
+function Techo({name} : {name : string}) {
+    return (
+        <div className="text-[10px] rounded px-1 py-[2px] w-max font-grotesk font-bold border border-dashed border-neutral-300 bg-gray-201 text-neutral-500">
+            {name}
+        </div>
+    )
+}
 
-export {A , I}
+export {A , I , Techo}
