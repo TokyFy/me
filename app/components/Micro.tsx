@@ -9,7 +9,7 @@ type A_props  = {
 function A({href , value} : A_props) {
     return (
         <a
-            className="underline text-neutral-900"
+            className="underline group-hover:text-neutral-950"
             href={`https://${href}`}
             target="_blank"
             rel="noopener noreferrer"

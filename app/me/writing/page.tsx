@@ -6,13 +6,13 @@ import Image from "next/image";
 export default function Blogs() {
     return (
         <>
-            <div>
-                <div className="mx-auto max-w-sm flex flex-col my-12 px-8">
+            <div >
+                <div className="max-w-sm flex flex-col my-12">
                     <h1 className="text-lg font-grotesk font-bold">Memories</h1>
                     <p className="text-md text-neutral-500">A personal feed of memories and thoughts...</p>
                 </div>
             </div>
-            <div className="mx-auto max-w-sm flex flex-col divide-y divide-dashed px-8">
+            <div className="max-w-sm flex flex-col divide-y divide-dashed pr-16">
                 <div className="flex flex-col gap-3 py-12">
                     <h2 className="font-grotesk font-medium text-lg ">
                         Encourage the future women to enter the amazing tech

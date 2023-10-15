@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className="font-jost font-normal dark:bg-black no-scrollbar">
-        <main className="dark:text-neutral-50">
+        <body className="font-jost font-normal dark:bg-black no-scrollbar max-w-[1920px] cursor-cell">
+        <div className="sticky top-0 left-0 z-50 border-dashed border-b-neutral-300 px-6 bg-neutral-900">
+            <NavBar/>
+        </div>
+        <main className="dark:text-neutral-50 px-6">
             <NextTopLoader
-                shadow=""
-                color="#9cf62b"
+                shadow={false}
+                color="#fff"
                 showSpinner={false}
             />
-            <div>
-                <NavBar/>
-            </div>
             {children}
         </main>
         </body>

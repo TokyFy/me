@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'grotesk' : ['Schibsted Grotesk' , 'system-ui'],
-        'jost': ['Jost' , 'system-ui']
+        'jost': ['Favorit Pro' , 'system-ui']
       }
     },
   },
