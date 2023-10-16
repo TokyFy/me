@@ -22,7 +22,7 @@ function A({href , value} : A_props) {
 function I({href , value} : A_props) {
     return (
         <Link
-            className="underline text-neutral-900 group-hover:text-lime-500"
+            className="text-neutral-900 border-b border-neutral-800 group-hover:border-dashed dark:border-neutral-300 dark:text-neutral-300"
             href={href}
         >
             {value}
@@ -32,7 +32,7 @@ function I({href , value} : A_props) {
 
 function Techo({name} : {name : string}) {
     return (
-        <div className="text-[10px] rounded px-1 py-[2px] w-max font-grotesk font-bold border border-dashed border-neutral-300 bg-gray-201 text-neutral-500">
+        <div className="text-[10px] rounded px-1 py-[2px] w-max font-grotesk font-bold border border-dashed border-neutral-300 text-neutral-500 dark:border-neutral-500 dark:text-neutral-300">
             {name}
         </div>
     )

@@ -9,7 +9,7 @@ export default function Blogs() {
     return (
         <>
             <div className="my-12">
-                <p className="text-sm text-neutral-500 max-w-lg">
+                <p className="text-sm text-neutral-500 max-w-lg dark:text-neutral-200">
                     Enter the realm of my photographic collection, where each image weaves a story of its own, inviting
                     you to journey through moments frozen in time.
                 </p>
@@ -122,17 +122,17 @@ type Photo = {
 
 function Photo({url, description, date}: Photo) {
     return (
-        <div className="group flex flex-col justify-between items-center border border-dashed border-neutral-200 p-4 gap-4 rounded-md bg-neutral-50">
+        <div className="group flex flex-col justify-between items-center border border-dashed border-neutral-200 p-4 gap-4 rounded-md bg-neutral-50 dark:bg-neutral-950 dark:bg-opacity-25 dark:border-neutral-800">
             <div className="max-w-sm max-h-60">
                 <Image
                     width={300}
                     height={600}
                     src={url}
                     alt={""}
-                    className="h-full w-auto grayscale group-hover:grayscale-0"
+                    className="h-full w-auto grayscale group-hover:grayscale blur-sm group-hover:blur-0"
                 />
             </div>
-            <div className="group-hover:underline text-neutral-500 text-sm">
+            <div className="text-neutral-400 text-sm group-hover:text-neutral-600 dark:text-neutral-700 dark:group-hover:text-neutral-100">
                 <p>{description}</p>
             </div>
         </div>

@@ -21,7 +21,7 @@ export default function Musics() {
                     feel alive at concerts.
                 </div>
 
-                <div className="flex flex-col divide-y divide-dashed">
+                <div className="flex flex-col divide-y divide-dashed dark:divide-neutral-500">
                     <Music
                         image={"https://e-cdn-images.dzcdn.net/images/cover/f60623c447617dd9db22014cbac44bda/264x264-000000-80-0-0.jpg"}
                         title={"Andro marary"}
@@ -70,6 +70,60 @@ export default function Musics() {
                         artist={"Joji"}
                     />
 
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/c2a04115e58fff156484fe7f332ed12e/264x264-000000-80-0-0.jpg"}
+                        title={"Glass Ceiling"}
+                        artist={"Matilda mann"}
+                    />
+
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/cb7f696b830545cf177a8e8c5c62491c/264x264-000000-80-0-0.jpg"}
+                        title={"Coffee"}
+                        artist={"Beabadoobee"}
+                    />
+
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/6756e4e3769f29e11f51951bed6003d6/264x264-000000-80-0-0.jpg"}
+                        title={"Never Goes Away "}
+                        artist={"Claire Rosinkranz"}
+                    />
+
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"mona lisa"}
+                        artist={"mxmtoon"}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"Moments "}
+                        artist={"Micah Edwards "}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"IZY"}
+                        artist={"Kristel"}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"When You're Away"}
+                        artist={"Ruru"}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"UMI"}
+                        artist={"See You Again"}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"OUTTA MY MIND"}
+                        artist={"MONSUNE"}
+                    />
+                    <Music
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        title={"I hope to be around"}
+                        artist={"Men I Trust"}
+                    />
+
                 </div>
             </div>
         </>
@@ -92,8 +146,8 @@ function Music({image, title, artist}: musicProps) {
                     alt={"Album cover Alala"}
                     priority
                 />
-                <div className="absolute aspect-square w-9 bg-slate-800 flex items-center justify-center rounded-full -z-[1] group-hover:translate-x-6 duration-500 ease-in-out">
-                    <div className="bg-white w-3 rounded-full aspect-square">
+                <div className="absolute aspect-square w-12 bg-slate-800 dark:bg-cyan-900 flex items-center justify-center rounded-full -z-[1] group-hover:translate-x-6 duration-500 ease-in-out">
+                    <div className="bg-white w-3 rounded-full aspect-square dark:bg-black">
 
                     </div>
                 </div>

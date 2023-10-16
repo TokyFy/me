@@ -14,30 +14,38 @@ export default function Guests() {
                 </p>
 
                 <div className="flex flex-col my-6 divide-y divide-dashed">
-                    <div className="w-full py-2">
-                        <p>Ohh nice website :d</p>
-                        <div className="justify-between flex">
-                            <p className="text-sm opacity-60">Pico</p>
-                            <p className="font-jost text-[12px] opacity-25">25 . 02 . 2023</p>
-                        </div>
-                    </div>
-
-                    <div className="w-full py-2">
-                        <p>GG Xd</p>
-                        <div className="flex justify-between">
-                            <p className="text-sm opacity-60">Ein</p>
-                            <p className="font-jost text-[12px] opacity-25">25 . 02 . 2023</p>
-                        </div>
-                    </div>
+                    <Message author={"nae"} message={"Ggg Xd"} date={"17 . 05 . 23"}/>
+                    <Message author={"Pablo"} message={"Ggg Xd"} date={"23 . 03 . 23"}/>
+                    <Message author={"Ein"} message={"Ggg Xd"} date={"19 . 02 . 23"}/>
+                    <Message author={"Pico"} message={"Ohh nice website :d"} date={"15 . 02 . 23"}/>
+                    <Message author={"Toky"} message={"First Message Xd"} date={"12 . 02 . 23"}/>
                 </div>
 
                 <div className="flex items-center">
-                    <button className="font-jost text-sm text-neutral-800">
+                    <button className="font-jost text-sm text-neutral-800 dark:text-neutral-300">
                         Sign up with <span className="underline">Google</span> or <span
                         className="underline">Github</span> to write a message
                     </button>
                 </div>
             </div>
         </>
+    )
+}
+
+type IMessage = {
+    author : string,
+    message : string,
+    date : string
+}
+
+function Message({author , message , date} : IMessage) {
+    return (
+        <div className="w-full py-3">
+            <p className="text-sm">{message}</p>
+            <div className="flex justify-between">
+                <p className="text-sm opacity-60">{author}</p>
+                <p className="font-jost text-[12px] opacity-25">{date}</p>
+            </div>
+        </div>
     )
 }
