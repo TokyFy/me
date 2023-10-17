@@ -36,14 +36,14 @@ type Photo = {
 
 function Photo({url, description, date}: Photo) {
     return (
-        <div className="group flex flex-col justify-between items-center border border-dashed border-neutral-200 p-4 gap-4 rounded-md bg-neutral-50 dark:bg-neutral-950 dark:bg-opacity-25 dark:border-neutral-800">
-            <div className="max-w-sm max-h-[90%] flex justify-center items-center grow overflow-hidden">
+        <div className="group flex flex-col justify-between items-center border border-dashed border-neutral-200 p-4 gap-4 rounded-md bg-neutral-50 dark:bg-neutral-950 dark:bg-opacity-25 dark:border-neutral-800 aspect-square">
+            <div className="max-w-sm max-h-[80%] flex justify-center items-center grow overflow-hidden m-auto">
                 <Image
                     width={300}
                     height={600}
                     src={url}
                     alt={""}
-                    className="w-auto h-auto grayscale group-hover:grayscale group-hover:blur-0"
+                    className="w-auto h-auto grayscale group-hover:grayscale-0"
                 />
             </div>
             <div className="text-neutral-400 text-sm group-hover:text-neutral-600 dark:text-neutral-700 dark:group-hover:text-neutral-100">
