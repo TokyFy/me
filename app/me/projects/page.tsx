@@ -3,6 +3,7 @@
 import {ArrowUpRightIcon} from "lucide-react";
 import Image from "next/image";
 import {Techo} from "@components/Micro";
+import Link from "next/link";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -20,13 +21,17 @@ export default function Projects() {
                         title={"Project - Personal website"}
                         description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cupiditate, debitis dicta distinctio ea exercitationem illo in ipsam itaque..."}
                         techno={["Nextjs" , "Tailwincss" , "ReactQuery" , "Api Rest" , "Graphql" , "Firebase" , "Monorepos"]}
-                        preview={"/assets/project-4.png"}/>
+                        preview={"/assets/project-4.png"}
+                        link={"https://toky.vercel.app/"}
+                    />
 
                     <Project
                         title={"Project - Lirikisa"}
                         description={"I'ts and web app that you can use to find the lirics of your favorite song..."}
                         techno={["React" , "Scss" , "Node" , "Api Rest" , "React Query"]}
-                        preview={"/assets/project-2.png"}/>
+                        preview={"/assets/project-2.png"}
+                        link={"https://lirikisa.vercel.app/"}
+                    />
                 </div>
             </div>
         </>
@@ -37,12 +42,16 @@ type IProject = {
     title : string,
     description : string,
     techno : string[],
-    preview : string
+    preview : string,
+    link : string
 }
 
-function Project({title , description , techno , preview} : IProject) {
+function Project({title , description , techno , preview , link} : IProject) {
     return (
-        <div className="group flex flex-col gap-3 cursor-pointer my-6 p-2 border border-dashed border-neutral-400 rounded dark:border-neutral-600">
+        <Link
+            href={link}
+            target={"_blank"}
+            className="group flex flex-col gap-3 cursor-pointer my-6 p-2 border border-dashed border-neutral-400 rounded dark:border-neutral-600">
             <div className=" flex justify-between text-neutral-800 dark:text-neutral-300">
                 <p className="group-hover:underline font-bold text-sm ">{title}</p>
 
@@ -64,6 +73,6 @@ function Project({title , description , techno , preview} : IProject) {
             <div className="rounded overflow-hidden bg-blue-50 dark:bg-gray-900">
                 <Image className="w-full h-auto scale-90 translate-y-3 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
             </div>
-        </div>
+        </Link>
     )
 }

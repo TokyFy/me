@@ -9,7 +9,7 @@ export default function Blogs() {
         <>
             <div >
                 <div className="max-w-lg flex flex-col my-8">
-                    <h1 className="text-md font-grotesk font-bold">Memories</h1>
+                    <h1 className="text-md font-primary font-bold">Memories</h1>
                     <p className="text-sm text-neutral-500">A personal feed of memories and thoughts...</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@ function Blog({preview , title , cover} : IBlog) {
 
                 <p className="text-[12px] text-neutral-400 dark:text-neutral-600">15 . 10 . 2023</p>
 
-                <div className="font-jost text-sm text-neutral-400 flex flex-col gap-6 dark:text-neutral-600">
+                <div className="font-second text-sm text-neutral-400 flex flex-col gap-6 dark:text-neutral-600">
                     <p>
                         {preview}
                     </p>

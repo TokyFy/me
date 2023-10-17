@@ -8,11 +8,11 @@ export default function Home() {
     return (
         <div className="max-w-md gap-16 py-16">
             <div className="flex flex-col">
-                <div className="flex font-grotesk items-center font-medium text-sm w-max ">
+                <div className="flex font-primary items-center font-medium text-sm w-max ">
                     <p className="text-neutral-500">06 . 10 . 23</p>
                 </div>
                 <div className="flex flex-col gap-6 text-neutral-500 text-sm">
-                    <h1 className="font-grotesk font-medium text-neutral-900 text-lg dark:text-neutral-300">Yet another personal website (*~*)</h1>
+                    <h1 className="font-primary font-medium text-neutral-900 text-lg dark:text-neutral-300">Yet another personal website (*~*)</h1>
 
                     <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
                         I have been creating several personal website in the past three yars,

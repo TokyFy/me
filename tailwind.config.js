@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'grotesk' : ['Schibsted Grotesk' , 'system-ui'],
-        'jost': ['Favorit Pro' , 'system-ui']
+        'primary' : ['Schibsted Grotesk' , 'system-ui'],
+        'second': ['Edu' , 'system-ui']
       }
     },
   },

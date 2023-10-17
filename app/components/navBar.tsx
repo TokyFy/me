@@ -7,7 +7,7 @@ import {usePathname} from "next/navigation";
 import {
     Menu,
     ArrowUpRight,
-    Asterisk, Lightbulb, SunMedium, Sun, Stars
+    Asterisk
 } from "lucide-react";
 
 function NavBar() {
@@ -21,9 +21,9 @@ function NavBar() {
 
     return (
         <div
-            className="font-grotesk flex justify-between items-center text-[13px] font-bold py-1 ">
+            className="font-primary flex justify-between items-center text-[13px] font-bold py-1 ">
             <Link href={"/"}>
-                <div className="group font-jost font-medium text-md flex items-center text-neutral-100">
+                <div className="group font-second font-medium text-md flex items-center text-neutral-100">
                     <div>
                         <Asterisk className="group-hover:rotate-90" size={28}/>
                     </div>

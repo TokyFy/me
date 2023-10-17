@@ -13,19 +13,21 @@ function Contact() {
             </div>
             <div>
                 <ContactLink intern platform="Musics" link="/me/musics"/>
-                <ContactLink intern platform="Animes" link="#"/>
                 <ContactLink intern platform="Photos" link="/me/photos"/>
-                <ContactLink intern platform="Bookmarks" link="#"/>
-                <ContactLink intern platform="Books" link="#"/>
-                <ContactLink intern platform="Projects" link="#"/>
+                <ContactLink intern platform="Projects" link="/me/projects"/>
+                <ContactLink intern disabled platform="Animes" link="/"/>
+                <ContactLink intern disabled platform="Bookmarks" link="/"/>
+                <ContactLink intern disabled platform="Books" link="/"/>
             </div>
         </div>
     );
 }
 
-function ContactLink({platform, link, intern}: { platform: string, link: string, intern?: boolean }) {
+type Icontact = { platform: string, link: string, intern?: boolean , disabled?:boolean }
+
+function ContactLink({platform, link, intern , disabled}: Icontact) {
     return <>
-        <Link className="group pt-1 flex text-sm hover:underline text-neutral-700 dark:text-neutral-300"
+        <Link className={`group pt-1 flex text-sm hover:underline w-max ${disabled ? "text-neutral-400 dark:text-neutral-600 cursor-not-allowed" : "text-neutral-700 dark:text-neutral-300"}`}
            href={`${intern ? "" : "https://"}${link}`}
            target={`${intern ? "" : "_blank"}`} rel="noopener noreferrer">
             <p className="flex gap-1 hover:underline">

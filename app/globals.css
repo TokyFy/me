@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +17,11 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+}
+
+@font-face {
+  font-family: "Edu";
+  src: url("/assets/fonts/Edu.woff");
 }
 
 
@@ -39,3 +45,11 @@
     background-color: white;
   }
 }
+
+@media (resolution <= 2dppx) {
+  body {
+    zoom: 100%;
+  }
+}
+
+

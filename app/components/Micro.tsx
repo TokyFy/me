@@ -32,7 +32,7 @@ function I({href , value} : A_props) {
 
 function Techo({name} : {name : string}) {
     return (
-        <div className="text-[10px] rounded px-1 py-[2px] w-max font-grotesk font-bold border border-dashed border-neutral-300 text-neutral-500 dark:border-neutral-500 dark:text-neutral-300">
+        <div className="text-[10px] rounded px-1 py-[2px] w-max font-primary font-bold border border-dashed border-neutral-300 text-neutral-500 dark:border-neutral-500 dark:text-neutral-300">
             {name}
         </div>
     )

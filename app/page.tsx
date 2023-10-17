@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col gap-6 py-12 max-w-sm pr-16">
 
             <div>
-                <h1 className="font-grotesk font-medium text-2xl">Fy Niaina Toky  (^~^) </h1>
+                <h1 className="font-primary font-medium text-2xl">Fy Niaina Toky  (^~^) </h1>
                 <h2 className="text-neutral-700 dark:text-neutral-400">CS student from Madagascar,</h2>
                 <p className="text-neutral-700 dark:text-neutral-400">He/Him  ,  Level 22 with Life (yo xd)</p>
             </div>

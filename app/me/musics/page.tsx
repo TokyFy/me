@@ -89,37 +89,37 @@ export default function Musics() {
                     />
 
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/0f73ffb55e722f8966efafbda75e8f00/264x264-000000-80-0-0.jpg"}
                         title={"mona lisa"}
                         artist={"mxmtoon"}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/ff4db00cf4b1597481ad90374258cc5f/264x264-000000-80-0-0.jpg"}
                         title={"Moments "}
                         artist={"Micah Edwards "}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/29ac9a4361fc77b3c935b98816b5394c/264x264-000000-80-0-0.jpg"}
                         title={"IZY"}
                         artist={"Kristel"}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/e53ec71aba25bfa311b217f1d25ec020/264x264-000000-80-0-0.jpg"}
                         title={"When You're Away"}
                         artist={"Ruru"}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/f4d3a9f25856a05f055d55b3f6c1aad5/264x264-000000-80-0-0.jpg"}
                         title={"UMI"}
                         artist={"See You Again"}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/565983ad4aea0e6d493905ae536f15b5/264x264-000000-80-0-0.jpg"}
                         title={"OUTTA MY MIND"}
                         artist={"MONSUNE"}
                     />
                     <Music
-                        image={"https://e-cdn-images.dzcdn.net/images/cover/53b67897a63d1dff1f369907168e4261/264x264-000000-80-0-0.jpg"}
+                        image={"https://e-cdn-images.dzcdn.net/images/cover/806d75ed58064112d274124fcc018e3f/264x264-000000-80-0-0.jpg"}
                         title={"I hope to be around"}
                         artist={"Men I Trust"}
                     />
@@ -135,14 +135,14 @@ function Music({image, title, artist}: musicProps) {
         <div className="group py-2 flex">
             <div className="flex flex-col justify-end text-sm">
                 <p className="font-medium group-hover:underline">{title}</p>
-                <p className="font-grotesk opacity-50 text-[12px]">{artist}</p>
+                <p className="font-primary opacity-50 text-[12px]">{artist}</p>
             </div>
             <div className="ml-auto relative flex items-center justify-center w-12 aspect-square overflow-visible border-neutral-200 rounded-sm group-hover:-translate-x-3 group-hover:-rotate-6 duration-500">
                 <Image
                     width={196}
                     height={196}
                     className={"w-full h-auto scale-110"}
-                    src={"/assets/cover.jpg"}
+                    src={image}
                     alt={"Album cover Alala"}
                     priority
                 />
