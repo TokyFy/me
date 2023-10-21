@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className="font-second font-normal dark:bg-black no-scrollbar max-w-[1920px] cursor-cell">
+        <body className="font-second font-normal dark:bg-black no-scrollbar max-w-[1920px] cursor-crosshair">
         <div className="sticky top-0 left-0 z-50 border-dashed border-b-neutral-300 px-6 bg-neutral-950 dark:bg-neutral-900">
             <NavBar/>
         </div>

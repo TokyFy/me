@@ -1,7 +1,7 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
-import {I, Techo} from "@components/Micro";
+import {I, Techno} from "@components/Micro";
 
 export default function Home() {
 
@@ -48,13 +48,13 @@ export default function Home() {
                 <div className="py-8">
                     <p className="text-md text-neutral-800 my-2 dark:text-neutral-500">Tech stack I used : </p>
                     <div className="flex gap-2 flex-wrap">
-                        <Techo name={"Nextjs"}/>
-                        <Techo name={"Tailwincss"}/>
-                        <Techo name={"ReactQuery"}/>
-                        <Techo name={"Api Rest"}/>
-                        <Techo name={"Graphql"}/>
-                        <Techo name={"Firebase"}/>
-                        <Techo name={"Monorepos"}/>
+                        <Techno name={"Nextjs"}/>
+                        <Techno name={"Tailwincss"}/>
+                        <Techno name={"ReactQuery"}/>
+                        <Techno name={"Api Rest"}/>
+                        <Techno name={"Graphql"}/>
+                        <Techno name={"Firebase"}/>
+                        <Techno name={"Monorepos"}/>
                     </div>
                 </div>
             </div>

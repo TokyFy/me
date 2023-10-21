@@ -2,7 +2,7 @@
 
 import {ArrowUpRightIcon} from "lucide-react";
 import Image from "next/image";
-import {Techo} from "@components/Micro";
+import {Techno} from "@components/Micro";
 import Link from "next/link";
 
 /* eslint-disable react/no-unescaped-entities */
@@ -11,15 +11,12 @@ export default function Projects() {
 
     return (
         <>
-            <div className="max-w-md flex flex-col gap-8 my-8">
-                <div className="text-md">
-                    I like crafting stuff , so there are few thing that I'm proud of
-                </div>
+            <div className="max-w-lg flex flex-col gap-8 my-8">
                 <div className="flex flex-col">
 
                     <Project
                         title={"Project - Personal website"}
-                        description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cupiditate, debitis dicta distinctio ea exercitationem illo in ipsam itaque..."}
+                        description={"My digital garder , were I store all my public data xd"}
                         techno={["Nextjs" , "Tailwincss" , "ReactQuery" , "Api Rest" , "Graphql" , "Firebase" , "Monorepos"]}
                         preview={"/assets/project-4.png"}
                         link={"https://toky.vercel.app/"}
@@ -32,6 +29,7 @@ export default function Projects() {
                         preview={"/assets/project-2.png"}
                         link={"https://lirikisa.vercel.app/"}
                     />
+
                 </div>
             </div>
         </>
@@ -51,11 +49,11 @@ function Project({title , description , techno , preview , link} : IProject) {
         <Link
             href={link}
             target={"_blank"}
-            className="group flex flex-col gap-3 cursor-pointer my-6 p-2 border border-neutral-200 rounded hover:border-dashed hover:border-neutral-400 dark:border-neutral-600">
+            className="group flex flex-col gap-3 cursor-pointer p-1 my-14 border border-transparent hover:border-dashed hover:border-neutral-400 dark:border-neutral-600">
             <div className=" flex justify-between text-neutral-800 dark:text-neutral-300">
                 <p className="group-hover:underline font-bold text-sm ">{title}</p>
 
-                <div className="group-hover:rotate-45 flex justify-center items-center">
+                <div className="group-hover:rotate-45 flex justify-center items-center opacity-25 group-hover:opacity-100">
                     <ArrowUpRightIcon size={14}/>
                 </div>
             </div>
@@ -63,15 +61,14 @@ function Project({title , description , techno , preview , link} : IProject) {
                 {description}
             </div>
             <div className="flex flex-col gap-1">
-                <div className="text-sm text-neutral-500 dark:text-neutral-300">Tech stack :</div>
                 <div className="flex gap-2 flex-wrap">
                     {
-                        techno.map((el, index) => <Techo name={el} key={index}/>)
+                        techno.map((el, index) => <Techno name={el} key={index}/>)
                     }
                 </div>
             </div>
-            <div className="rounded overflow-hidden bg-blue-50 dark:bg-gray-900">
-                <Image className="w-full h-auto scale-90 translate-y-6 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
+            <div className="rounded overflow-hidden bg-indigo-100 dark:bg-gray-900">
+                <Image className="w-full h-auto scale-90 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
             </div>
         </Link>
     )

@@ -68,7 +68,6 @@ export function NavItems({route, href}: { route: string, href?: string }) {
                 <ArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5" size={12}/>
             </li>
         </Link>
-
     )
 }
 
