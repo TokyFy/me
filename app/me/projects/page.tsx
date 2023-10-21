@@ -51,7 +51,7 @@ function Project({title , description , techno , preview , link} : IProject) {
         <Link
             href={link}
             target={"_blank"}
-            className="group flex flex-col gap-3 cursor-pointer my-6 p-2 border border-dashed border-neutral-400 rounded dark:border-neutral-600">
+            className="group flex flex-col gap-3 cursor-pointer my-6 p-2 border border-neutral-200 rounded hover:border-dashed hover:border-neutral-400 dark:border-neutral-600">
             <div className=" flex justify-between text-neutral-800 dark:text-neutral-300">
                 <p className="group-hover:underline font-bold text-sm ">{title}</p>
 
@@ -71,7 +71,7 @@ function Project({title , description , techno , preview , link} : IProject) {
                 </div>
             </div>
             <div className="rounded overflow-hidden bg-blue-50 dark:bg-gray-900">
-                <Image className="w-full h-auto scale-90 translate-y-3 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
+                <Image className="w-full h-auto scale-90 translate-y-6 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
             </div>
         </Link>
     )

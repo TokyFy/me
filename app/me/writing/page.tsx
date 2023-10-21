@@ -37,10 +37,10 @@ function Blog({preview , title , cover} : IBlog) {
     return(
         <div className="group relative flex flex-col gap-4  p-3 border border-dashed border-neutral-300 rounded hover:bg-neutral-50 my-3 sm:flex-row sm:items-center dark:border-neutral-600 dark:hover:bg-neutral-950">
             <div className="flex rounded overflow-hidden w-16 max-w-sm aspect-square relative sm:w-36 dark:brightness-60">
-                <Image className={"object-cover"} fill src={cover} alt={""} quality={1}/>
+                <Image className={"object-cover"} sizes={"400px"} fill src={cover} alt={""} quality={1}/>
             </div>
             <div>
-                <h2 className="font-medium text-sm flex justify-between items-center dark:text-neutral-400">
+                <h2 className="font-bold text-sm flex justify-between items-center dark:text-neutral-400">
                     <p>{title}</p>
                     <ArrowUpRight className="opacity-40 w-max h-max group-hover:rotate-45 group-hover:opacity-100 absolute top-3 right-3" size={16}/>
                 </h2>
