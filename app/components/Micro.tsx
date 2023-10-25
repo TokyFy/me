@@ -9,7 +9,7 @@ type A_props  = {
 function A({href , value} : A_props) {
     return (
         <a
-            className="underline group-hover:text-neutral-950"
+            className="group-hover:text-neutral-950"
             href={`https://${href}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -22,7 +22,7 @@ function A({href , value} : A_props) {
 function I({href , value} : A_props) {
     return (
         <Link
-            className="text-neutral-900 border-b border-neutral-800 group-hover:border-dashed dark:border-neutral-300 dark:text-neutral-300"
+            className="text-neutral-900 border-b border-transparent border-dashed group-hover:border-neutral-900 dark:border-neutral-300 dark:text-neutral-300"
             href={href}
         >
             {value}
@@ -32,7 +32,7 @@ function I({href , value} : A_props) {
 
 function Techno({name} : {name : string}) {
     return (
-        <div className="text-[10px] rounded px-1 py-[2px] w-max font-primary font-bold border border-dashedd border-neutral-200 text-neutral-500 dark:border-neutral-500 dark:text-neutral-300">
+        <div className="text-[12px] rounded px-1 py-[2px] w-max font-primary font-bold border border-dashedd border-neutral-200 text-neutral-500 dark:border-neutral-500 dark:text-neutral-300">
             {name}
         </div>
     )

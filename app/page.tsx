@@ -1,20 +1,17 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
-import Contact from "@components/Contact";
+import Navigation from "@components/Navigation";
 export default function Home() {
 
     return (
-        <div className="flex flex-col gap-6 py-12 max-w-sm pr-16">
-
-            <div>
-                <h1 className="font-primary font-medium text-2xl">Fy Niaina Toky  (^~^) </h1>
-                <h2 className="text-neutral-700 dark:text-neutral-400">CS student from Madagascar,</h2>
-                <p className="text-neutral-700 dark:text-neutral-400">He/Him  ,  Level 22 with Life (yo xd)</p>
+        <div className="flex flex-col gap-6 max-w-sm">
+            <div className="text-sm">
+                ~ / Home
             </div>
 
-
-            <div className="flex flex-col gap-5 font-normal text-neutral-500 text-sm ">
+            <div className="flex flex-col gap-5 text-neutral-900 text-sm ">
+                <h1>~(*-*)~</h1>
                 <p className="group hover:text-neutral-800 dark:hover:text-neutral-100">
                     Hey there, I'm just a lambda human who love sitting next to a computer all day and expect making some new friend :d
                 </p>
@@ -26,10 +23,9 @@ export default function Home() {
                     When I'm not coding or browsing Github , I'm
                     likely playing skateboard or just chilling at home doing nothing.
                 </p>
-            </div>
-
-            <div className="">
-                <Contact/>
+                <p className="group hover:text-neutral-800 dark:hover:text-neutral-100">
+                    Thank for visiting me here {"<3"}
+                </p>
             </div>
         </div>
     )

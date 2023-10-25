@@ -11,8 +11,8 @@ export default function Projects() {
 
     return (
         <>
-            <div className="max-w-lg flex flex-col gap-8 my-8">
-                <div className="flex flex-col">
+            <div className="max-w-lg flex flex-col gap-8">
+                <div className="flex flex-col first:-mt-1">
 
                     <Project
                         title={"Project - Personal website"}
@@ -49,7 +49,7 @@ function Project({title , description , techno , preview , link} : IProject) {
         <Link
             href={link}
             target={"_blank"}
-            className="group flex flex-col gap-3 cursor-pointer p-1 my-14 border border-transparent hover:border-dashed hover:border-neutral-400 dark:border-neutral-600">
+            className="group flex flex-col gap-3 cursor-pointer p-1 mb-14 border border-transparent hover:border-dashed hover:border-neutral-400 dark:border-neutral-600">
             <div className=" flex justify-between text-neutral-800 dark:text-neutral-300">
                 <p className="group-hover:underline font-bold text-sm ">{title}</p>
 
@@ -67,7 +67,7 @@ function Project({title , description , techno , preview , link} : IProject) {
                     }
                 </div>
             </div>
-            <div className="rounded overflow-hidden bg-indigo-100 dark:bg-gray-900">
+            <div className="rounded overflow-hidden bg-neutral-100 dark:bg-gray-900">
                 <Image className="w-full h-auto scale-90 shadow-xl dark:shadow-neutral-600" width={1090} height={720} src={preview} alt={""}/>
             </div>
         </Link>

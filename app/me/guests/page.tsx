@@ -7,10 +7,10 @@ export default function Guests() {
 
     return (
         <>
-            <div className="max-w-xl flex flex-col gap-2 py-12">
+            <div className="max-w-xl flex flex-col gap-2">
 
                 <p className="font-second text-sm">
-                    Ask Me Anything (^-^)
+                    Ask Me Anything (*-*)
                 </p>
 
                 <div className="flex flex-col my-6 divide-y divide-dashed">

@@ -15,7 +15,7 @@ export default function Musics() {
 
     return (
         <>
-            <div className="py-7 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[1px] p-[1px] bg-neutral-200">
                     <div className={"bg-white p-8 flex items-center justify-center dark:bg-black"}>
                         <p className="text-sm">
@@ -144,7 +144,7 @@ function Music({image, title, artist}: musicProps) {
                     width={196}
                     height={196}
                     className={"w-full h-auto scale-90 group-hover:scale-[87.5%] group-hover:-translate-x-[20%] z-10 duration-300 opacity-20 group-hover:opacity-100"}
-                    src={`/assets/temp/cover-38.jpg`}
+                    src={`/assets/temp/cover-${Math.trunc(Math.random() * 127 + 1)}.jpg`}
                     alt={"Album cover Alala"}
                     priority
                 />
@@ -155,7 +155,7 @@ function Music({image, title, artist}: musicProps) {
                 </div>
             </div>
             <div className="flex justify-between text-sm text-center border-t border-neutral-200 w-full px-2 py-1 group-hover:bg-neutral-950 group-hover:text-neutral-50 duration-200 ease-in dark:bg-black dark:border-neutral-500 dark:group-hover:bg-white">
-                <p className="font-medium dark:group-hover:text-neutral-950">{title}</p>
+                <p className="dark:group-hover:text-neutral-950">{title}</p>
                 <p className="font-primary text-neutral-600 text-[12px] group-hover:text-neutral-200 dark:group-hover:text-neutral-800">{artist}</p>
             </div>
         </div>
