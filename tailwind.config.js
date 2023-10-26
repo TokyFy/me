@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'primary' : ['Favorit Pro' , 'system-ui'],
-        'second': ['Favorit Pro' , 'system-ui']
+        'second': ['cmu' , 'system-ui']
       }
     },
   },

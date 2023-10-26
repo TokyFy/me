@@ -11,7 +11,8 @@ import {
     SunDim,
     Circle
 } from "lucide-react";
-import {ContactLink} from "@components/ContactLink";
+
+import {ContactLink} from "@components/MobileMenu";
 
 function NavBar() {
 

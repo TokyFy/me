@@ -32,7 +32,7 @@
 }
 
 #nprogress .bar {
-  height: 1px!important;
+  height: 2px!important;
 }
 
 @media (prefers-color-scheme: dark) {

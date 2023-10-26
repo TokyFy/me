@@ -1,13 +1,13 @@
 import React from 'react';
 import {ContactLink} from "@components/ContactLink";
-import {Asterisk} from "lucide-react";
 
 function Navigation() {
     return (
         <div className="flex flex-col gap-6">
             <div className="text-sm">
-                <h1 className="font-bold">Toky Fy</h1>
-                <p className="text-neutral-500">B.2001,</p>
+                <h1 className="font-bold text-lg">Toky Fy</h1>
+                <p className="text-neutral-500">He/Him ,</p>
+                <p className="text-neutral-500">B.2001 ,</p>
                 <p className="text-neutral-500" >Madagascar</p>
             </div>
 
@@ -16,16 +16,16 @@ function Navigation() {
             </div>
 
             <div>
-                <ContactLink intern platform="~ /" link="/"/>
+                <ContactLink intern platform="Home" link="/"/>
                 <ContactLink intern platform="Colophon" link="/me/about"/>
                 <ContactLink intern platform="Writing" link="/me/writing"/>
                 <ContactLink intern platform="Projects" link="/me/projects"/>
                 <ContactLink intern platform="Musics" link="/me/musics"/>
                 <ContactLink intern platform="Photos" link="/me/photos"/>
                 <ContactLink intern platform="AMA" link="/me/guests"/>
-                <ContactLink intern disabled platform="Animes" link="/"/>
-                <ContactLink intern disabled platform="Bookmarks" link="/"/>
-                <ContactLink intern disabled platform="Books" link="/"/>
+                <ContactLink intern disabled platform="Animes" link="/#"/>
+                <ContactLink intern disabled platform="Bookmarks" link="/#"/>
+                <ContactLink intern disabled platform="Books" link="/#"/>
             </div>
 
             <div>

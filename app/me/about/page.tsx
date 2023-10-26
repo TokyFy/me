@@ -2,17 +2,23 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import {I, Techno} from "@components/Micro";
+import {Dot} from "lucide-react";
 
 export default function Home() {
 
     return (
         <div className="max-w-md gap-16">
             <div className="flex flex-col">
-                <div className="flex font-primary items-center font-medium text-sm w-max ">
-                    <p className="text-neutral-500">06 . 10 . 23</p>
+                <div className="flex font-primary items-center text-sm w-max ">
+                    <p className="text-neutral-400">Last update : 25 . Oct . 2023</p>
                 </div>
                 <div className="flex flex-col gap-6 text-neutral-800 text-sm">
-                    <h1 className="font-primary font-medium text-neutral-900 text-lg dark:text-neutral-300">Yet another personal website (*~*)</h1>
+                    <h1 className="font-primary font-medium text-neutral-900 text-lg dark:text-neutral-300">Yet another
+                        personal website (*~*)</h1>
+
+                    <div>
+                        <h2 className="text-sm text-neutral-400">Content</h2>
+                    </div>
 
                     <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
                         I have been creating several personal website in the past three years,
@@ -24,38 +30,39 @@ export default function Home() {
                         and added more page to it , to help other to be my friend Xd,
                     </p>
 
-                    <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
-                        There you can see all my strange <I href={"/me/writing"} value={" Writings "}/> , my little <I href={"/me/projects"} value={"Projects"}/> and crafting ,
-                        I like to take <I href={"/me/photos"} value={"Photos"}/> so may be you can find your next wallpaper ,
-
-                        There are some nice <I href={"/me/musics"} value={"Song writer"}/> in my country so may be you like then too
-                    </p>
-
-                    <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
-                        In my free time , likely I'm watching japanese <I href={"/me/animes"} value={"Anime"}/> , so if you like too , check out
-                        my recommendations.
-
-                        My mon forced me to read some <I href={"/me/books"} value={"Book"}/> so there some of those.
-
-                        Finally , while browsing the vast word wide web , i found those <I href={"/me/objects"} value={"Thing"}/> , may be you need then too
-                    </p>
-
-                    <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
-                        Thank guys visiting me there , see you soon,
-                        Please leave me a little message in my <I href={"/me/guests"} value={"Guestbook"}/>,
-                    </p>
-                </div>
-                <div className="py-8">
-                    <p className="text-md text-neutral-800 my-2 dark:text-neutral-500">Tech stack I used : </p>
-                    <div className="flex gap-2 flex-wrap">
-                        <Techno name={"Nextjs"}/>
-                        <Techno name={"Tailwincss"}/>
-                        <Techno name={"ReactQuery"}/>
-                        <Techno name={"Api Rest"}/>
-                        <Techno name={"Graphql"}/>
-                        <Techno name={"Firebase"}/>
-                        <Techno name={"Monorepos"}/>
+                    <div>
+                        <h2 className="text-sm text-neutral-400">Typography</h2>
                     </div>
+
+                    <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
+                        I used the Favorit Pro of the Dynamo Foundries , suitable for tiny font size.
+                    </p>
+
+                    <div>
+                        <h2 className="text-sm text-neutral-400">Technical</h2>
+                    </div>
+
+                    <p className={"group hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-300"}>
+                        Built with NextJs and Tailwind for the styling , Some Nodejs Server for the Auth process , And
+                        Mdx and ContentLayer for the blogging stuff
+                    </p>
+
+                    <div>
+                        <h2 className="text-sm text-neutral-400">Global stack</h2>
+                    </div>
+                    <p className="flex flex-wrap text-neutral-400">
+                        {
+                            ["Nextjs", "Tailwincss", "ReactQuery", " Api Rest", "Graphql", "Firebase", "Monorepos"]
+                                .map(
+                                    (el, index) =>
+                                        <span className="flex" key={`t-${index}`}>
+                                            {index !== 0 && <Dot size={18}/>}
+                                            <Techno name={el}/>
+                                         </span>
+                                    )
+                        }
+
+                    </p>
                 </div>
             </div>
         </div>

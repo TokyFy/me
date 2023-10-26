@@ -6,7 +6,7 @@ import {ArrowUpRight} from "lucide-react";
 
 export default function Blogs() {
     return (
-        <>
+        <div className="max-w-lg">
             <div className="text-sm">
                 ~ / writing
             </div>
@@ -14,48 +14,59 @@ export default function Blogs() {
                 <p className="text-sm text-neutral-500">Why I'm writing ? I guess , i just wanna learn english and
                     trying to write about my passion and struggle Xd </p>
             </div>
-            <div className="max-w-lg flex flex-col mb-24 divide-y divide-neutral-100">
-
-                <Blog
-                    title={"Motivation on the floors"}
-                    cover={"/assets/blogs/0003.jpg"}
-                    preview={"Unemployment can be a real challenge for software students like me Despite the enthusiasm and skills..."}
-                />
-                <Blog
-                    title={"My Keyboard dreams "}
-                    cover={"/assets/blogs/0001.jpg"}
-                    preview={"For developers, the keyboard is not just a tool; it's an extension of the mind. Enter the mechanical keyboard..."}
-                />
-                <Blog
-                    title={"Head first in C languages"} cover={"/assets/blogs/0011.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
-                <Blog
-                    title={"Error handling with NodeJs"} cover={"/assets/blogs/0012.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
-                <Blog
-                    title={"Amazing BUN"}
-                    cover={"/assets/blogs/0009.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
-                <Blog
-                    title={"Minimalist and Yet complex"}
-                    cover={"/assets/blogs/0008.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
-                <Blog
-                    title={"Your very first website"}
-                    cover={"/assets/blogs/0008.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
-                <Blog
-                    title={"Head first on the Ts land"}
-                    cover={"/assets/blogs/0008.jpg"}
-                    preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
-                />
+            <div className="mb-8">
+                <div>
+                    <h2 className="text-sm text-neutral-400">Life</h2>
+                </div>
+                <div className="flex flex-col divide-y divide-neutral-100">
+                    <Blog
+                        title={"Motivation on the floors"}
+                        cover={"/assets/blogs/0003.jpg"}
+                        preview={"Unemployment can be a real challenge for software students like me Despite the enthusiasm and skills..."}
+                    />
+                    <Blog
+                        title={"My Keyboard dreams "}
+                        cover={"/assets/blogs/0001.jpg"}
+                        preview={"For developers, the keyboard is not just a tool; it's an extension of the mind. Enter the mechanical keyboard..."}
+                    />
+                </div>
             </div>
-        </>
+            <div className="mb-8">
+                <div>
+                    <h2 className="text-sm text-neutral-400">Geek</h2>
+                </div>
+                <div className="flex flex-col mb-24 divide-y divide-neutral-100">
+                    <Blog
+                        title={"Head first in C languages"} cover={"/assets/blogs/0011.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                    <Blog
+                        title={"Error handling with NodeJs"} cover={"/assets/blogs/0012.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                    <Blog
+                        title={"Amazing BUN"}
+                        cover={"/assets/blogs/0009.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                    <Blog
+                        title={"Minimalist and Yet complex"}
+                        cover={"/assets/blogs/0008.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                    <Blog
+                        title={"Your very first website"}
+                        cover={"/assets/blogs/0008.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                    <Blog
+                        title={"Head first on the Ts land"}
+                        cover={"/assets/blogs/0008.jpg"}
+                        preview={"In my free time , likely I'm watching japanese Anime , so if you like too , check out my recommendations..."}
+                    />
+                </div>
+            </div>
+        </div>
     )
 }
 
