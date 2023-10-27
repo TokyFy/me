@@ -32,7 +32,7 @@ function I({href , value} : A_props) {
 
 function Techno({name} : {name : string}) {
     return (
-        <span className="text-[13px] w-max font-primary font-bold border-neutral-200 text-neutral-400 dark:border-neutral-500 dark:text-neutral-300">
+        <span className="text-[12px] w-max font-primary font-bold border-neutral-200 text-neutral-600 dark:border-neutral-500 dark:text-neutral-300">
             {name}
         </span>
     )
