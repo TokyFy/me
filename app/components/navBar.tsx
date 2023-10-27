@@ -8,11 +8,8 @@ import {
     Menu,
     ArrowUpRight,
     Asterisk,
-    SunDim,
-    Circle
 } from "lucide-react";
 
-import {ContactLink} from "@components/MobileMenu";
 
 function NavBar() {
 
