@@ -12,7 +12,6 @@ import {
     Circle
 } from "lucide-react";
 
-import {ContactLink} from "@components/MobileMenu";
 
 function NavBar() {
 
