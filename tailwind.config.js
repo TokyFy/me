@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'primary' : ['soehne' , 'system-ui'],
-        'second': ['soehne' , 'system-ui']
+        'second': ['favorit Pro' , 'system-ui'],
+        'mono' : ['monospace']
       }
     },
   },

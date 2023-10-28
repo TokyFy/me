@@ -11,23 +11,16 @@ export default function Blogs() {
             <div className="text-sm">
                 ~ / photos
             </div>
-            <p className="text-sm py-4">I lost my phone so There's no picture at the moment , <br/> Sorry T_T</p>
-            {/*<div*/}
-            {/*    className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12 mt-7">*/}
-            {/*    /!*<div className="flex justify-center items-center aspect-square">*!/*/}
-            {/*    /!*    <p className="text-sm text-neutral-500 dark:text-neutral-200 max-w-[50%]">*!/*/}
-            {/*    /!*        Enter the realm of my photographic collection, where each image weaves a story of its own, inviting*!/*/}
-            {/*    /!*        you to journey through moments frozen in time.*!/*/}
-            {/*    /!*    </p>*!/*/}
-            {/*    /!*</div>*!/*/}
-
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1696061416696-98cb5e9c3b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"} description={"landscape-001.jpg"} />*!/*/}
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1632827326368-a1980704e53e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80"} description={"portrait-002.jpg"} />*!/*/}
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1697032217861-46327ba5f5d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80"} description={"shutter-003.jpg"} />*!/*/}
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1606764765380-105d13e2918b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"} description={"aperture-004.jpg"} />*!/*/}
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1617972882867-3707f274c115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"} description={"exposure-005.jpg"} />*!/*/}
-            {/*    /!*<Photo url={"https://images.unsplash.com/photo-1554049264-8ff0bee7eacd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80"} description={"focus-006.jpg"} />*!/*/}
-            {/*</div>*/}
+            {/*<p className="text-sm py-4">I lost my phone so There's no picture at the moment , <br/> Sorry T_T</p>*/}
+            <div
+                className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12 mt-7">
+                <Photo url={"https://images.unsplash.com/photo-1696061416696-98cb5e9c3b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"} description={"landscape-001.jpg"} />
+                <Photo url={"https://images.unsplash.com/photo-1632827326368-a1980704e53e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80"} description={"portrait-002.jpg"} />
+                <Photo url={"https://images.unsplash.com/photo-1697032217861-46327ba5f5d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80"} description={"shutter-003.jpg"} />
+                <Photo url={"https://images.unsplash.com/photo-1606764765380-105d13e2918b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"} description={"aperture-004.jpg"} />
+                <Photo url={"https://images.unsplash.com/photo-1617972882867-3707f274c115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"} description={"exposure-005.jpg"} />
+                <Photo url={"https://images.unsplash.com/photo-1554049264-8ff0bee7eacd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80"} description={"focus-006.jpg"} />
+            </div>
         </>
     )
 }

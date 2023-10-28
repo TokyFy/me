@@ -1,6 +1,11 @@
 'use client'
 
-import {ArrowUpRightIcon, Dot} from "lucide-react";
+import {
+    ArrowUpRightIcon,
+    Dot,
+    Folder,
+    Trash2,
+} from "lucide-react";
 import Image from "next/image";
 import {Techno} from "@components/Micro";
 import Link from "next/link";
@@ -11,24 +16,27 @@ export default function Projects() {
 
     return (
         <>
-            <div className="max-w-lg flex flex-col gap-8">
-                    <Project
-                        title={"Project - Personal website"}
-                        description={"My digital garder , were I store all my public data xd"}
-                        techno={["Nextjs", "Tailwincss", "ReactQuery", "Api Rest", "Graphql", "Firebase", "Monorepos"]}
-                        preview={"/assets/project-4.png"}
-                        link={"https://toky.vercel.app/"}
-                        key={"p-1"}
-                    />
+            <div className="max-w-lg flex flex-col gap-6">
+                <div className="text-sm">
+                    ~ / Project
+                </div>
+                <div className="flex gap-10">
 
-                    <Project
-                        title={"Project - Lirikisa"}
-                        description={"I'ts and web app that you can use to find the lirics of your favorite song..."}
-                        techno={["React", "Scss", "Node", "Api Rest", "React Query"]}
-                        preview={"/assets/project-2.png"}
-                        link={"https://lirikisa.vercel.app/"}
-                        key={"p-2"}
-                    />
+                    <ProjectFolder name={"Portfolio"} link={"/me/projects/portfolio"}/>
+                    <ProjectFolder name={"Yt"} link={"#"}/>
+                    <ProjectFolder name={"Lirikisa"} link={"#"}/>
+
+                    <Link
+                        className="group flex flex-col items-center text-neutral-400 cursor-alias hover:text-neutral-900 gap-2 justify-between"
+                        href={"/"}>
+                        <div className="w-9">
+                            <Image width={36} height={36} src={"/assets/trash.png"} alt={""}/>
+                        </div>
+                        <div
+                            className="text-[12px] text-center leading-tight italic group-hover:underline font-bold">Trash
+                        </div>
+                    </Link>
+                </div>
             </div>
         </>
     )
@@ -56,22 +64,37 @@ function Project({title, description, techno, preview, link}: IProject) {
                     <ArrowUpRightIcon size={14}/>
                 </div>
             </div>
-            <div className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+            <div className="text-sm text-neutral-600 dark:text-neutral-400 mt-4">
                 {description}
             </div>
-            <div className="flex flex-wrap items-center text-neutral-400">
+            <div className="flex flex-wrap items-center text-neutral-400 border py-1 px-2 my-2 rounded w-max">
                 {
                     techno.map((el, index) =>
                         <span className="flex" key={`t-${index}`}>
-                            { index !== 0 && <Dot size={18}/> }
+                            {index !== 0 && <Dot size={18}/>}
                             <Techno name={el}/>
                         </span>
                     )
                 }
             </div>
-            <div className="overflow-hidden bg-neutral-100 dark:bg-gray-900 mt-2 border border-neutral-300">
+            <div className="overflow-hidden bg-neutral-100 dark:bg-gray-900 mt-4 border border-neutral-300">
                 <Image className="w-full h-auto dark:shadow-neutral-600" width={1090} height={720}
                        src={preview} alt={""}/>
+            </div>
+        </Link>
+    )
+}
+
+function ProjectFolder({name , link} : {name : string , link: string}) {
+    return (
+        <Link
+            className="group flex flex-col items-center text-neutral-400 cursor-alias hover:text-neutral-900 gap-1 justify-between"
+            href={link}>
+            <div className="w-9 group-hover:-translate-y-1 duration-300 ease-out">
+                <Image width={36} height={36} src={"/assets/folder.ico"} alt={""}/>
+            </div>
+            <div
+                className="text-[12px] text-center leading-tight italic group-hover:underline font-bold">{name}
             </div>
         </Link>
     )
