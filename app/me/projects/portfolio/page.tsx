@@ -27,8 +27,10 @@ export default function Projects() {
                 <p className="underline">Screenshot : </p>
 
                 <div className="overflow-hidden bg-neutral-100 dark:bg-gray-900 mt-2 border border-neutral-300">
-                    <Image className="w-full h-auto dark:shadow-neutral-600" width={1090} height={720}
-                           src={"/assets/project-4.png"} alt={""}/>
+                    <Image
+                        className="w-full h-auto dark:shadow-neutral-600"
+                        width={1920} height={1080}
+                        src={"/assets/project-1.png"} alt={""}/>
                 </div>
 
                 <ul className="list-disc list-inside py-4">
@@ -37,7 +39,9 @@ export default function Projects() {
                         <span className="px-2">:</span>
                         <a target="_blank" href="https://toky.vercel.app" className="font-bold">
                             <span>toky.vercel.app</span>
-                            <CornerRightUp className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in inline ml-1 -translate-y-0.5" size={13}/>
+                            <CornerRightUp
+                                className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in inline ml-1 -translate-y-0.5"
+                                size={13}/>
                         </a>
                     </li>
 
@@ -46,7 +50,9 @@ export default function Projects() {
                         <span className="px-2">:</span>
                         <a target="_blank" href="https://github.com/TokyFy/me" className="font-bold">
                             <span>https://github.com/TokyFy/me</span>
-                            <CornerRightUp className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in inline ml-1 -translate-y-0.5" size={13}/>
+                            <CornerRightUp
+                                className="opacity-50 group-hover:opacity-100 transition-all duration-500 ease-in inline ml-1 -translate-y-0.5"
+                                size={13}/>
                         </a>
                     </li>
 

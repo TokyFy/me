@@ -18,32 +18,21 @@
 }
 
 @font-face {
-  font-family: "Edu";
-  src: url("/assets/fonts/Edu.woff");
-}
-
-@font-face {
-  font-family: soehne;
-  src: url(/assets/fonts/shone_1.woff2) format("woff2");
-  font-display: swap;
+  font-family: "favorit";
   font-weight: 400;
-  font-style: normal
+  src: url("/assets/fonts/FavoritPro-Regular.woff");
 }
 
 @font-face {
-  font-family: soehne;
-  src: url(/assets/fonts/shone_2.woff2) format("woff2");
-  font-display: swap;
-  font-weight: 400;
-  font-style: italic
+  font-family: "favorit";
+  font-weight: 500;
+  src: url("/assets/fonts/FavoritPro-Medium.woff");
 }
 
 @font-face {
-  font-family: soehne;
-  src: url(/assets/fonts/shone_3.woff2) format("woff2");
-  font-display: swap;
-  font-weight: 600;
-  font-style: italic
+  font-family: "favorit";
+  font-weight: 700;
+  src: url("/assets/fonts/FavoritPro-Bold.woff");
 }
 
 * {

@@ -17,12 +17,12 @@ function Navigation() {
 
             <div>
                 <ContactLink intern platform="Home" link="/"/>
-                <ContactLink intern platform="Colophon" link="/me/about"/>
                 <ContactLink intern platform="Writing" link="/me/writing"/>
                 <ContactLink intern platform="Projects" link="/me/projects"/>
                 <ContactLink intern platform="Musics" link="/me/musics"/>
                 <ContactLink intern platform="Photos" link="/me/photos"/>
                 <ContactLink intern platform="AMA" link="/me/guests"/>
+                <ContactLink intern platform="Colophon" link="/me/about"/>
                 <ContactLink intern disabled platform="Animes" link="/#"/>
                 <ContactLink intern disabled platform="Bookmarks" link="/#"/>
                 <ContactLink intern disabled platform="Books" link="/#"/>
