@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'primary' : ['favorit' , 'system-ui'],
-        'second': ['favorit' , 'system-ui'],
+        'primary' : ['system-ui'],
+        'second': ['system-ui'],
         'mono' : ['monospace']
       }
     },
