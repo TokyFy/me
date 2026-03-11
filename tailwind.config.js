@@ -9,7 +9,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'primary': ['Geist Mono', 'monospace'],
+                'primary': ['saitamaar', 'monospace'],
                 'mono': ['monospace']
             }
         },
