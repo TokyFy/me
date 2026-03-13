@@ -3,6 +3,13 @@ import React from "react";
 import { Metadata } from 'next';
 import portfolio from './data/portfolio.json'
 import Link from 'next/link';
+import localFont from 'next/font/local';
+
+const saitamaar = localFont({
+    src: '../public/Saitamaar-Regular.woff2',
+    display: 'swap',
+    preload: true,
+})
 
 export const metadata: Metadata = {
     title: 'Toky FY',
@@ -12,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className='font-primary max-w-[600px] ml-16 text-[16px] text-black bg-neutral-100'>
+            <body className={`${saitamaar.className} max-w-[600px] ml-16 text-[16px] text-black bg-neutral-100`}>
                 <div className="py-12" id="index">
                     <section className='pb-4'>
                         <div className='flex gap-2 w-1/2 flex-wrap border-b border-dotted border-black pb-4'>

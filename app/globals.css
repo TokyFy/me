@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'saitamaar';
-    /* A name you choose to use later in your CSS */
-    src: url('/Saitamaar-Regular.woff2') format('woff2'),
-}
-
 body {
     line-height: 14px;
 }
