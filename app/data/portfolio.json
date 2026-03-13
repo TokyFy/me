@@ -6,15 +6,42 @@
     "alt": "Portrait inspired by Monster anime"
   },
   "tags": [
-    "✦ Index",
-    "☆ me",
-    "✦ Links",
-    "♥ Music",
-    "✢ TXT",
-    "✦ Changelog",
-    "✦ Microblog",
-    "⁂  Guestbook",
-    "⁂  Login"
+    {
+      "label": "✦ Index",
+      "href": "/"
+    },
+    {
+      "label": "☆ me",
+      "href": "/me"
+    },
+    {
+      "label": "✦ Links",
+      "href": "#links"
+    },
+    {
+      "label": "♥ Music",
+      "href": "#music"
+    },
+    {
+      "label": "✢ TXT",
+      "href": "#txt"
+    },
+    {
+      "label": "✦ Changelog",
+      "href": "#changelog"
+    },
+    {
+      "label": "✦ Microblog",
+      "href": "#microblog"
+    },
+    {
+      "label": "⁂  Guestbook",
+      "href": "#guestbook"
+    },
+    {
+      "label": "⁂  Login",
+      "href": "#login"
+    }
   ],
   "rows": [
     {

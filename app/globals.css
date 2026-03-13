@@ -8,6 +8,10 @@
     src: url('/Saitamaar-Regular.woff2') format('woff2'),
 }
 
+body {
+    line-height: 14px;
+}
+
 * {
     box-sizing: border-box;
 }

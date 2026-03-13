@@ -10,6 +10,15 @@ const nextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            {
+                source: '/index',
+                destination: '/',
+                permanent: false,
+            },
+        ]
+    },
 }
 
 module.exports = nextConfig
