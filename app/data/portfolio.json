@@ -31,16 +31,8 @@
       "href": "#changelog"
     },
     {
-      "label": "✦ Microblog",
-      "href": "#microblog"
-    },
-    {
       "label": "⁂  Guestbook",
       "href": "#guestbook"
-    },
-    {
-      "label": "⁂  Login",
-      "href": "#login"
     }
   ],
   "rows": [
