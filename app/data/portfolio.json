@@ -1,0 +1,57 @@
+{
+  "avatar": {
+    "src": "/franaivo.png",
+    "width": 132,
+    "height": 132,
+    "alt": "Portrait inspired by Monster anime"
+  },
+  "tags": [
+    "✦ Index",
+    "☆ me",
+    "✦ Links",
+    "♥ Music",
+    "✢ TXT",
+    "✦ Changelog",
+    "✦ Microblog",
+    "⁂  Guestbook",
+    "⁂  Login"
+  ],
+  "rows": [
+    {
+      "label": "Name",
+      "value": "Toky / franaivo"
+    },
+    {
+      "label": "Profile",
+      "value": "I'm a computer science student at 42 Antananarivo, and I've been studying there for two years. I learn a lot by rebuilding things from scratch to better understand the core of a technology. Right now, I'm also learning how to document what I build and what I learn. *_*"
+    },
+    {
+      "label": "Location",
+      "value": "Madagascar ♡ — the 2nd largest island country in the world (AFAIK)."
+    },
+    {
+      "label": "Hobby",
+      "value": "Manga: Kiyohiko Azuma's \"Azumanga Daioh\", Barasui's \"Strawberry Marshmallow\", and Hitoshi Tomizawa's \"Alien 9\". Anime: Dennou Coil, Haibane Renmei, Jewelpet Sunshine, FLCL, Alien 9, Kaiba, Lucky Star, K-On!, Ascendance of a Bookworm, and more. I also love the Ghost in the Shell series and works directed by Mamoru Oshii."
+    },
+    {
+      "label": "Music",
+      "value": "My music taste is hard to describe, so I made my collection public—you can check it there."
+    },
+    {
+      "label": "What\ninfluenced",
+      "value": "I was strongly influenced by the old internet, where people shared niche interests on personal websites. I was also inspired by anime like Monster and Cowboy Bebop, which I used to borrow from a friend back then."
+    },
+    {
+      "label": "Favorite\nsubject",
+      "value": "Computer Science / Skateboarding / Music / Linux / Manga / Anime / Art / Photography"
+    },
+    {
+      "label": "Fun Fact",
+      "value": "I stutter when I talk to someone new. Also, I'm not great with colors, so I usually avoid using too many of them."
+    },
+    {
+      "label": "Things I\ntry to\navoid",
+      "value": "Politics, one-sided conversations, and moodiness."
+    }
+  ]
+}
