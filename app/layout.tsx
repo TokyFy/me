@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`${saitamaar.className} max-w-[600px] ml-16 text-[16px] text-black bg-neutral-100`}>
+            <body className={`${saitamaar.className} max-w-[600px] ml-4 md:ml-16 text-[16px] text-black bg-neutral-100`}>
                 <div className="py-12" id="index">
                     <section className='pb-4'>
-                        <div className='flex gap-2 w-1/2 flex-wrap border-b border-dotted border-black pb-4'>
+                        <div className='flex gap-2 md:w-1/2 flex-wrap border-b border-dotted border-black pb-4'>
                             {portfolio.tags.map((tag) => (
                                 <Link
                                     key={tag.label}
