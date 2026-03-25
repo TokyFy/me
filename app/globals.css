@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    line-height: 14px;
-}
 
 * {
     box-sizing: border-box;

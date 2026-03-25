@@ -6,27 +6,18 @@ export default function Home() {
 
     return (
         <div>
-            <p>♡ Hiiiiiii ♡ , welcome to this little boring website (ﾉ◕ヮ◕)</p>
-            <p>You don&apos;t know me yet ?? pleaseee check this <Link href="/me">meee</Link></p>
+            <div>
+                <p className="hover:underline decoration-wavy decoration-[blue]">a9F#k2LmP$zX1qW8vT&cR5uY!nB3eD0hJ</p><br/>
 
-            <div className="flex gap-4">
-                <ul className="self-center border-r border-dotted border-neutral-400 pr-4">
-                    <p className="bg-black text-white w-fit px-1 my-1">{"< links >"}</p>
-                    <li><Link href="https://github.com/TokyFy/">{">@Github"}</Link></li>
-                    <li><Link target="_blank" href="https://www.linkedin.com/in/tokyfy/">{">@LinkedIn"}</Link></li>
-                    <li><Link href="mailto:tokyfy@outlook.com">{">@tokyfy@outlook.com"}</Link></li>
-                </ul>
-                <div className="flex flex-col items-center gap-2">
-                    <Image className="mix-blend-multiply" src={"/current_playing.gif"} alt="Currently Playing" width={86} height={86} />
-                    <p className="text-[14px] max-w-[202px]">{"<spotify>\"カネコアヤノ - 抱擁 / Kaneko Ayano - Houyo\""}</p>
-                </div>
+                <p className="hover:underline decoration-wavy decoration-[blue]">Zx8@LpQ2vN!kR5tYwE3#cB7mUoD1fH9sAqJrT6yW0&uP4VgXzM</p><br/>
+
+                <p className="hover:underline decoration-wavy decoration-[blue]">Qw3E$rT6yU8iO0pA!sD2f ** WIP ** hJkLzXcVbN7mP9Y#@&tR5</p><br/>
+
+                <p className="hover:underline decoration-wavy decoration-[blue]">M!nB7vC$xZ2aS4dF6gH8jK0LqW3eR5tY7uI9oP@#&VkXzA1sD</p><br/>
             </div>
-            <ul className="py-4">
-                <p className="bg-black text-white w-fit px-1 my-1">♦ changelog</p>
-                <li> {"> 2026/03/12 : \"Staring this website\""}</li>
-                <li> {"> 2026/03/13 : \"Add home page\""}</li>
-            </ul>
-            <div className="flex gap-4">
+
+            
+            {/* <div className="flex gap-4">
                 <div className="flex flex-col border-r border-dotted border-neutral-400 max-w-[128px]">
                     <p className="bg-black text-white w-fit px-1 my-1">{"< hobbies >"}</p>
                     <Image className="border border-dashed border-black" src={"/Monster_manga.jpg"} width={96} height={96} alt="Monster anime" />
@@ -42,29 +33,30 @@ export default function Home() {
                     <Image className="mix-blend-multiply saturate-50" src={"/frog.jpg"} width={196} height={196} alt="just a frog"/>
                 </div>
 
-            </div>
-            <div className="flex gap-4 flex-wrap">
-                <div>
+            </div> */}
+            <div className="flex gap-4 flex-wrap my-4">
+                {/* <div>
                     <h3 className="bg-black text-white w-fit px-1 my-1">{"* Web Status *"}</h3>
                     <table>
                         <tbody>
                             <tr>
-                                <td>{">views : "}</td>
+                                <td>{"views : "}</td>
                                 <td>14</td>
                             </tr>
                             <tr>
-                                <td>{">created : "}</td>
+                                <td>{"created : "}</td>
                                 <td>2026/03/12</td>
                             </tr>
                             <tr>
-                                <td>{">updated : "}</td>
+                                <td>{"updated : "}</td>
                                 <td>2026/03/13 21:09:49</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
 
-                <div>
+
+                {/* <div>
                     <h3 className="bg-black text-white w-fit px-1 my-1">{"<Comments>"}</h3>
                     <table>
                         <tbody>
@@ -82,8 +74,32 @@ export default function Home() {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
+
+            <div className="flex gap-4">
+                <p>
+                    you can reach me out via these platforms : <Link className="italic underline decoration-wavy decoration-[blue]" href="https://github.com/TokyFy/">{"Github"}</Link>{" , "}
+                    <Link className="italic underline decoration-wavy decoration-[blue]" target="_blank"  href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" , "}
+                    <Link className="italic underline decoration-wavy decoration-[blue]" href="mailto:tokyfy@outlook.com">{"tokyfy@outlook.com"}</Link>
+                </p>
+                {/* <ul className="self-center border-r border-dotted border-neutral-400 pr-4">
+                    <p className="bg-black text-white w-fit px-1 my-1">{"< links >"}</p>
+                    <li><Link href="https://github.com/TokyFy/">{">@Github"}</Link></li>
+                    <li><Link target="_blank" href="https://www.linkedin.com/in/tokyfy/">{">@LinkedIn"}</Link></li>
+                    <li><Link href="mailto:tokyfy@outlook.com">{">@tokyfy@outlook.com"}</Link></li>
+                </ul> */}
+                {/* <div className="flex flex-col items-center gap-2">
+                    <Image className="mix-blend-multiply" src={"/current_playing.gif"} alt="Currently Playing" width={86} height={86} />
+                    <p className="text-[14px] max-w-[202px]">{"<spotify>\"カネコアヤノ - 抱擁 / Kaneko Ayano - Houyo\""}</p>
+                </div> */}
+            </div>
+
+            {/* <ul className="py-4">
+                <p className="bg-black text-white w-fit px-1 my-1">♦ changelog</p>
+                <li> {"> 2026/03/12 : \"Staring this website\""}</li>
+                <li> {"> 2026/03/13 : \"Add home page\""}</li>
+            </ul> */}
         </div>
     )
 }

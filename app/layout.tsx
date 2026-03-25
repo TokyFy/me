@@ -5,12 +5,6 @@ import portfolio from './data/portfolio.json'
 import Link from 'next/link';
 import localFont from 'next/font/local';
 
-const saitamaar = localFont({
-    src: '../public/Saitamaar-Regular.woff2',
-    display: 'swap',
-    preload: true,
-})
-
 export const metadata: Metadata = {
     title: 'Toky FY',
     description: 'Frontend developer from Madagascar',
@@ -19,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`${saitamaar.className} max-w-[600px] ml-4 md:ml-16 text-[16px] text-black bg-neutral-100`}>
+            <body className={`font-primary text-[13px]  max-w-[600px] ml-4 md:ml-16  bg-neutral-100`}>
                 <div className="py-12" id="index">
                     <section className='pb-4'>
                         <div className='flex gap-2 md:w-1/2 flex-wrap border-b border-dotted border-black pb-4'>
@@ -29,7 +23,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                                     href={tag.href}
                                     className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'
                                 >
-                                    <p className='text-[14px]'>{tag.label}</p>
+                                    <p className='text-[13px]'>{tag.label}</p>
                                 </Link>
                             ))}
                         </div>
