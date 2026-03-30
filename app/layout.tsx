@@ -2,6 +2,7 @@ import './globals.css'
 import React from "react";
 import { Metadata } from 'next';
 import Link from 'next/link';
+import ThemeSwitcher from '@components/theme-switcher';
 
 export const metadata: Metadata = {
     title: 'Toky FY',
@@ -11,29 +12,31 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`font-primary text-[13px]  max-w-[600px] ml-4 md:ml-16  bg-neutral-100`}>
+            <body className={`font-primary text-[13px] max-w-[600px] ml-4 md:ml-16`}>
                 <div className="py-12" id="index">
-                    <section className='pb-4'>
-                        <div className='flex gap-2 md:w-1/2 flex-wrap pb-4'>
-                            <Link href="/" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                    <section className='gap-4'>
+                        <div className='flex gap-2 flex-wrap items-center pb-4'>
+                            <Link href="/" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>✦ Index</p>
                             </Link>
-                            <Link href="/blogs/" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                            <Link href="/blogs/" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>☆ Blog</p>
                             </Link>
-                            <Link href="#links" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                            <Link href="#links" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>✦ Links</p>
                             </Link>
-                            <Link href="#music" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                            <Link href="#music" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>♥ Music</p>
                             </Link>
-                            <Link href="#changelog" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                            <Link href="#changelog" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>✦ Changelog</p>
                             </Link>
-                            <Link href="#guestbook" className='bg-neutral-200 w-fit px-1 hover:bg-neutral-300 transition-colors'>
+                            <Link href="#guestbook" className='tag-pill w-fit px-1 transition-colors'>
                                 <p className='text-[13px]'>⁂  Guestbook</p>
                             </Link>
+                            <ThemeSwitcher />
                         </div>
+                        
                     </section>
                     {children}
                 </div>

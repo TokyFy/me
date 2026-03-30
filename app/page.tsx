@@ -6,16 +6,16 @@ export default function Home() {
 
     return (
         <div>
-            <p className="hover:underline decoration-wavy decoration-[blue]">heyyo , welcome to my little corner of the internet.</p><br />
-            <p className="hover:underline decoration-wavy decoration-[blue]">this is where i build, break, and archive things i find interesting — from random ideas to actual projects.</p><br />
-            <p className="hover:underline decoration-wavy decoration-[blue]">this place is constantly evolving (and probably always will be), so expect a few rough edges here and there.</p><br />
-            <p className="hover:underline decoration-wavy decoration-[blue]">got something to share, ask, or just want to say hi? feel free to reach out through the links below.</p><br />
+            <p className="accent-hover">heyyo , welcome to my little corner of the internet.</p><br />
+            <p className="accent-hover">this is where i build, break, and archive things i find interesting — from random ideas to actual projects.</p><br />
+            <p className="accent-hover">this place is constantly evolving (and probably always will be), so expect a few rough edges here and there.</p><br />
+            <p className="accent-hover">got something to share, ask, or just want to say hi? feel free to reach out through the links below.</p><br />
 
             <div className="flex gap-4">
                 <p>
-                    <Link className="italic underline decoration-wavy decoration-[blue]" href="https://github.com/TokyFy/">{"Github"}</Link>{" , "}
-                    <Link className="italic underline decoration-wavy decoration-[blue]" target="_blank" href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" , "}
-                    <Link className="italic underline decoration-wavy decoration-[blue]" href="mailto:tokyfy@outlook.com">{"tokyfy@outlook.com"}</Link>
+                    <Link className="italic accent-link" href="https://github.com/TokyFy/">{"Github"}</Link>{" , "}
+                    <Link className="italic accent-link" target="_blank" href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" , "}
+                    <Link className="italic accent-link" href="mailto:tokyfy@outlook.com">{"tokyfy@outlook.com"}</Link>
                 </p>
             </div>
         </div >

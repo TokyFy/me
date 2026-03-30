@@ -9,7 +9,7 @@ export default async function BlogsIndexPage() {
             <ul className="space-y-2 list-[square] list-inside">
                 {posts.map((post) => (
                     <li key={post.slug}>
-                        <Link className="underline decoration-wavy decoration-[blue]" href={`/blogs/${post.slug}`}>
+                        <Link className="accent-link" href={`/blogs/${post.slug}`}>
                             {post.title}
                         </Link>
                     </li>

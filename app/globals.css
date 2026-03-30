@@ -2,13 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg: #f5f5f5;
+    --text: #1a1a1a;
+    --muted: #e5e5e5;
+    --muted-hover: #d4d4d4;
+    --accent: #1d4ed8;
+    --selection-text: #ffffff;
+}
+
+[data-theme='mint'] {
+    --bg: #edf8f5;
+    --text: #092218;
+    --muted: #c7ede3;
+    --muted-hover: #a9e0d2;
+    --accent: #0f766e;
+    --selection-text: #ffffff;
+}
+
+[data-theme='sunset'] {
+    --bg: #fff3ea;
+    --text: #311406;
+    --muted: #ffd7c1;
+    --muted-hover: #ffc2a4;
+    --accent: #c2410c;
+    --selection-text: #fff8f0;
+}
+
+[data-theme='win95'] {
+    --bg: #008080;
+    --text: #f2f2f2;
+    --muted: #c0c0c0;
+    --muted-hover: #e2e2e2;
+    --accent: #000080;
+    --selection-text: #ffffff;
+}
+
+[data-theme='mono'] {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #e5e5e5;
+    --muted-hover: #cfcfcf;
+    --accent: #000000;
+    --selection-text: #ffffff;
+}
+
+[data-theme='hacker'] {
+    --bg: #030a03;
+    --text: #7dff8a;
+    --muted: #0c1f0f;
+    --muted-hover: #15381b;
+    --accent: #00ff41;
+    --selection-text: #021202;
+}
+
+[data-theme='amber'] {
+    --bg: #161100;
+    --text: #ffd48a;
+    --muted: #2c1f00;
+    --muted-hover: #463100;
+    --accent: #ffb347;
+    --selection-text: #1a1000;
+}
 
 * {
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
 *::selection {
-    background-color: blue;
-    color: white;
+    background-color: var(--accent);
+    color: var(--selection-text);
     font-weight: bold;
+}
+
+.tag-pill {
+    background-color: var(--muted);
+}
+
+.tag-pill:hover {
+    background-color: var(--muted-hover);
+}
+
+.accent-hover:hover {
+    text-decoration: underline wavy;
+    text-decoration-color: var(--accent);
+}
+
+.accent-link {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--accent);
+}
+
+.theme-control:hover {
+    color: var(--accent);
 }
