@@ -1,0 +1,47 @@
+import { readFile, readdir } from 'fs/promises'
+import path from 'path'
+import matter from 'gray-matter'
+
+export type PostMetadata = {
+    slug: string
+    title: string
+    date?: string
+}
+
+const POSTS_DIR = path.join(process.cwd(), 'posts')
+
+function toSlug(fileName: string): string {
+    return fileName.replace(/\.(mdx|md)$/i, '')
+}
+
+function isPostFile(fileName: string): boolean {
+    return fileName.endsWith('.mdx') || fileName.endsWith('.md')
+}
+
+export async function getAllPostsMetadata(): Promise<PostMetadata[]> {
+    const files = await readdir(POSTS_DIR)
+
+    const posts = await Promise.all(
+        files
+            .filter(isPostFile)
+            .map(async (fileName) => {
+                const slug = toSlug(fileName)
+                const fullPath = path.join(POSTS_DIR, fileName)
+                const source = await readFile(fullPath, 'utf8')
+                const { data } = matter(source)
+
+                return {
+                    slug,
+                    title: typeof data.title === 'string' && data.title.trim() ? data.title : slug,
+                    date: typeof data.date === 'string' ? data.date : undefined,
+                }
+            })
+    )
+
+    return posts.sort((a, b) => a.slug.localeCompare(b.slug))
+}
+
+export async function getPostMetadataBySlug(slug: string): Promise<PostMetadata | null> {
+    const posts = await getAllPostsMetadata()
+    return posts.find((post) => post.slug === slug) ?? null
+}
