@@ -3,23 +3,18 @@
 import { useEffect, useState } from 'react'
 
 const THEMES = [
-    { value: 'paper', label: 'Paper' },
-    { value: 'mint', label: 'Mint' },
-    { value: 'sunset', label: 'Sunset' },
-    { value: 'win95', label: 'Win95' },
-    { value: 'mono', label: 'Black & White' },
-    { value: 'hacker', label: 'Hacker' },
-    { value: 'amber', label: 'Amber CRT' },
+    { value: 'light', label: 'Light' },
+    { value: 'dark', label: 'Dark' },
 ]
 
 const STORAGE_KEY = 'theme'
 
 export default function ThemeSwitcher() {
-    const [theme, setTheme] = useState('paper')
+    const [theme, setTheme] = useState('light')
 
     useEffect(() => {
         const savedTheme = window.localStorage.getItem(STORAGE_KEY)
-        const initialTheme = savedTheme && THEMES.some((item) => item.value === savedTheme) ? savedTheme : 'paper'
+        const initialTheme = savedTheme && THEMES.some((item) => item.value === savedTheme) ? savedTheme : 'light'
 
         document.documentElement.dataset.theme = initialTheme
         setTheme(initialTheme)
@@ -32,9 +27,7 @@ export default function ThemeSwitcher() {
     }
 
     function onCycleTheme() {
-        const currentIndex = THEMES.findIndex((item) => item.value === theme)
-        const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % THEMES.length
-        onThemeChange(THEMES[nextIndex].value)
+        onThemeChange(theme === 'dark' ? 'light' : 'dark')
     }
 
     const currentLabel = THEMES.find((item) => item.value === theme)?.label ?? 'Theme'
@@ -42,12 +35,12 @@ export default function ThemeSwitcher() {
     return (
         <button
             type="button"
-            className='tag-pill w-fit px-1 transition-colors'
+            className='tag-pill font-pixel w-fit px-1 transition-colors uppercase'
             onClick={onCycleTheme}
             aria-label={`Switch theme, current: ${currentLabel}`}
             title={`Theme: ${currentLabel}`}
         >
-            * themes
+            * {currentLabel}
         </button>
     )
 }

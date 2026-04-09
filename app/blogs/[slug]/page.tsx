@@ -47,9 +47,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     return (
-        <article className="space-y-6 py-4">
-            <h1 className="text-lg font-semibold">{post.title}</h1>
-            <div className="space-y-3">
+        <article className="space-y-6 py-4 max-w-[72ch]">
+            <h1 className="text-2xl md:text-3xl leading-tight font-semibold">{post.title}</h1>
+            <div className="blog-content space-y-4 text-base leading-7">
                 <Post />
             </div>
         </article>
