@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 
 export type PostMetadata = {
     slug: string
+    fileName: string
     title: string
     date?: string
 }
@@ -11,7 +12,11 @@ export type PostMetadata = {
 const POSTS_DIR = path.join(process.cwd(), 'posts')
 
 function toSlug(fileName: string): string {
-    return fileName.replace(/\.(mdx|md)$/i, '')
+    return fileName
+        .replace(/\.(mdx|md)$/i, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
 }
 
 function isPostFile(fileName: string): boolean {
@@ -32,6 +37,7 @@ export async function getAllPostsMetadata(): Promise<PostMetadata[]> {
 
                 return {
                     slug,
+                    fileName,
                     title: typeof data.title === 'string' && data.title.trim() ? data.title : slug,
                     date: typeof data.date === 'string' ? data.date : undefined,
                 }
@@ -43,5 +49,6 @@ export async function getAllPostsMetadata(): Promise<PostMetadata[]> {
 
 export async function getPostMetadataBySlug(slug: string): Promise<PostMetadata | null> {
     const posts = await getAllPostsMetadata()
-    return posts.find((post) => post.slug === slug) ?? null
+    const normalizedSlug = toSlug(slug)
+    return posts.find((post) => post.slug === normalizedSlug) ?? null
 }

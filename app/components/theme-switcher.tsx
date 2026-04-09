@@ -35,7 +35,7 @@ export default function ThemeSwitcher() {
     return (
         <button
             type="button"
-            className='tag-pill font-pixel w-fit px-1 transition-colors uppercase'
+            className='font-mono w-fit px-1 transition-colors uppercase bg-[var(--muted)] hover:bg-[var(--muted-hover)]'
             onClick={onCycleTheme}
             aria-label={`Switch theme, current: ${currentLabel}`}
             title={`Theme: ${currentLabel}`}

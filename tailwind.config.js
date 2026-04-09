@@ -10,8 +10,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 'primary': ['"Courier Mono"', 'monospace'],
-                'pixel': ['var(--font-dotgothic16)', 'sans-serif'],
-                'mono': ['monospace']
+                'mono': ['"Public Mono"', 'monospace']
             }
         },
     },
