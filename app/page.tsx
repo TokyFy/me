@@ -10,8 +10,8 @@ export default function Home() {
 
             <div className="flex gap-4 font-mono uppercase">
                 <p>
-                    <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href="https://github.com/TokyFy/">{"Github"}</Link>{" , "}
-                    <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" target="_blank" href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" , "}
+                    <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href="https://github.com/TokyFy/">{"Github"}</Link>{" ✦ "}
+                    <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" target="_blank" href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" ✦ "}
                     <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href="mailto:tokyfy@outlook.com">{"tokyfy@outlook.com"}</Link>
                 </p>
             </div>
