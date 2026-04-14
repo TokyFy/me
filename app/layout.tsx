@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`font-primary text-[13px] max-w-[600px] ml-4 md:ml-16`}>
+            <body className={`font-primary text-[14px] max-w-[600px] ml-4 md:ml-16`}>
                 <div className="py-12" id="index">
                     <section className='gap-4'>
                         <div className='flex gap-2 flex-wrap items-center pb-4 uppercase'>
@@ -36,7 +36,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                             </Link>
                             <ThemeSwitcher />
                         </div>
-                        
+
                     </section>
                     {children}
                 </div>
