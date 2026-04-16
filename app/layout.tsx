@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ThemeSwitcher from '@components/theme-switcher';
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
     title: 'Toky FY',
@@ -37,6 +38,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                     </section>
                     {children}
                 </div>
+                <Analytics />
             </body>
         </html>
     )

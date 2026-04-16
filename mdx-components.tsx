@@ -10,9 +10,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </h1>
         ),
         p: ({ children, ...props }) => (
-            <h1 className="font-primary py-2" {...props}>
+            <p className="font-primary py-2" {...props}>
                 {children}
-            </h1>
+            </p>
         ),
         ul: ({ children, ...props }) => (
             <ul className="list-[square] list-inside" {...props}>
