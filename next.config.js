@@ -3,6 +3,7 @@ import createMDX from '@next/mdx'
 import path from 'path'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 const nextConfig = {
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
@@ -39,6 +40,7 @@ const nextConfig = {
 const withMDX = createMDX({
     options: {
         remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+        rehypePlugins: [[rehypePrettyCode, { theme: 'github-light' }]]
     },
 })
 

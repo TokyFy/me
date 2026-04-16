@@ -5,7 +5,7 @@ export default async function BlogsIndexPage() {
     const posts = await getAllPostsMetadata()
 
     return (
-        <section className="py-4 space-y-4">
+        <section>
             <ul className="space-y-2 list-[square] list-inside">
                 {posts.map((post) => (
                     <li key={post.slug}>

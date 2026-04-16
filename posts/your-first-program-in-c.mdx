@@ -1,0 +1,71 @@
+# Create Your First C Program
+
+A simple guide to writing and compiling a C program using [gcc](https://gcc.gnu.org/) and a [Makefile](https://makefiletutorial.com/).
+
+You will need:
+
+- `gcc` installed
+- `make` installed
+- A terminal
+
+
+
+Create a file called `main.c`:
+
+```c
+#include <unistd.h>
+
+int main(void) {
+    write(1, "Hello, World!\n", 14);
+    return 0;
+}
+```
+
+To learn about a specific function (like `write` in this example), you can check the man page —
+Google: `man write` or type `man write` in the terminal.
+
+Now you can turn it into an executable using this command:
+
+```bash
+gcc -Wall -Wextra -o hello main.c
+```
+
+- `-Wall` — turn on common warnings
+- `-Wextra` — turn on extra warnings
+- `-o hello` — name the output `hello`
+
+All the `-W*` flags are not mandatory for the program to run, but using them is considered best practice.
+
+Run it — it should print something in the terminal:
+
+```bash
+./hello
+Hello, World!
+```
+
+Typing that long `gcc` command every time gets old fast, so instead, create a `Makefile`:
+
+```makefile
+CC     = gcc
+CFLAGS = -Wall -Wextra
+
+all:
+	$(CC) $(CFLAGS) -o hello main.c
+
+clean:
+	rm -f hello
+```
+
+Now just run:
+
+```bash
+make        # compiles the program
+./hello     # runs it
+make clean  # deletes the binary
+```
+
+The Makefile is a very powerful and standard tool in low-level programming — worth reading up on as much as you can.
+
+That's it! You wrote a C program, compiled it with `gcc`, and automated the build with a `Makefile`.
+
+You might wonder why `printf` wasn't used here — well, the fun part is that you can reinvent it yourself. That's kind of the whole point. Have fun!

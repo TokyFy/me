@@ -36,11 +36,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     let Post
 
-    try 
-    {
+    try {
         const postModule = (await import(`@posts/${post.fileName}`))
         Post = postModule.default
-    } 
+    }
     catch
     {
         notFound()
@@ -48,8 +47,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     return (
         <article>
-            <h1>{post.title}</h1>
-             <Post />
+            <Post />
         </article>
     )
 }
