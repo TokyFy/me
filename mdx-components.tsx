@@ -5,7 +5,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         ...components,
         h1: ({ children, ...props }) => (
-            <h1 className="font-mono text-lg uppercase text-center" {...props}>
+            <h1 className="font-mono text-lg uppercase" {...props}>
                 {children}
             </h1>
         ),

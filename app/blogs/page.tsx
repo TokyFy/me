@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { getAllPostsMetadata } from '@lib/posts'
 
 export default async function BlogsIndexPage() {
-    const posts = await getAllPostsMetadata()
+    const posts = await getAllPostsMetadata();
+
 
     return (
         <section>

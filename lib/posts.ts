@@ -35,16 +35,17 @@ export async function getAllPostsMetadata(): Promise<PostMetadata[]> {
                 const source = await readFile(fullPath, 'utf8')
                 const { data } = matter(source)
 
+
                 return {
                     slug,
                     fileName,
                     title: typeof data.title === 'string' && data.title.trim() ? data.title : slug,
-                    date: typeof data.date === 'string' ? data.date : undefined,
+                    date: String(data.date)
                 }
             })
     )
 
-    return posts.sort((a, b) => a.slug.localeCompare(b.slug))
+    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export async function getPostMetadataBySlug(slug: string): Promise<PostMetadata | null> {
