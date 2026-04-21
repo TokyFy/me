@@ -25,7 +25,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </pre>
         ),
         a: ({ children, ...props }) => (
-            <a className='underline decoration-wavy font-mono' {...props}>
+            <a target='_blank' className='underline decoration-wavy font-mono' {...props}>
                 {children}
             </a>
         ),

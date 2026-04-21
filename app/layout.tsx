@@ -23,7 +23,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                             <Link href="/blogs/" className='font-mono w-fit px-1 transition-colors bg-[#FE9E93ff] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>☆ Blog</p>
                             </Link>
-                            <Link href="#music" className='font-mono w-fit px-1 transition-colors bg-[#ade8f4] border border-transparent hover:border-black'>
+                            <Link href="/projects/" className='font-mono w-fit px-1 transition-colors bg-[#ade8f4] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>♥ Project</p>
                             </Link>
                             <Link href="#guestbook" className='font-mono w-fit px-1 transition-colors bg-[#FFFFFF] border border-transparent hover:border-black'>
