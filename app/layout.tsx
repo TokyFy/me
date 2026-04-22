@@ -17,19 +17,19 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 <div className="py-12" id="index">
                     <section className='gap-4'>
                         <div className='flex gap-2 flex-wrap items-center pb-4 uppercase'>
-                            <Link href="/" className='font-mono w-fit px-1 transition-colors bg-[#D1BEE8ff] border border-transparent hover:border-black'>
+                            <Link href="/" className='font-mono w-fit px-1 transition-colors bg-[#FFFF] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>✦ Index</p>
                             </Link>
-                            <Link href="/blogs/" className='font-mono w-fit px-1 transition-colors bg-[#FE9E93ff] border border-transparent hover:border-black'>
+                            <Link href="/blogs/" className='font-mono w-fit px-1 transition-colors bg-[#FFFF] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>☆ Blog</p>
                             </Link>
-                            <Link href="/projects/" className='font-mono w-fit px-1 transition-colors bg-[#ade8f4] border border-transparent hover:border-black'>
+                            <Link href="/projects/" className='font-mono w-fit px-1 transition-colors bg-[#FFFF] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>♥ Project</p>
                             </Link>
                             <Link href="#guestbook" className='font-mono w-fit px-1 transition-colors bg-[#FFFFFF] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>⁂  Guestbook</p>
                             </Link>
-                            <Link href="#changelog" className='font-mono w-fit px-1 transition-colors bg-[#95d5b2] border border-transparent hover:border-black'>
+                            <Link href="#changelog" className='font-mono w-fit px-1 transition-colors bg-[#FFFF] border border-transparent hover:border-black'>
                                 <p className='text-[13px]'>✦ Changelog</p>
                             </Link>
                             <ThemeSwitcher />
