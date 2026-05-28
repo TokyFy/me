@@ -28,7 +28,7 @@ export default function Home() {
 
             <div>
                 <div>
-                    <Image className="hover:filter-none" style={{ filter: 'url(#melt-filter)' }} width={114} height={114} alt="Toky fy" src={"/me.png"} />
+                    <Image className="melt-image" width={114} height={114} alt="Toky fy" src={"/me.png"} />
                 </div>
                 <div className="text-white py-4">
                     <p>Toky Fy ✦</p>
