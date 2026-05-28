@@ -10,7 +10,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'primary': ['proto', 'monospace'],
+                'primary': ['Inter', 'monospace'],
                 'mono': ['"Public Mono"', 'monospace']
             }
         },
