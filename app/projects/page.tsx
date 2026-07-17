@@ -4,7 +4,7 @@ export default async function Project() {
 
     return (
         <section>
-            <ul className="space-y-2 list-[square] list-inside">
+            <ul className="space-y-2 list-[square] list-inside text-neutral-300">
                 <li>
                     <Link
                         href={"https://lirikisa.vercel.app/"}

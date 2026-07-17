@@ -40,7 +40,7 @@ const nextConfig = {
 const withMDX = createMDX({
     options: {
         remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
-        rehypePlugins: [[rehypePrettyCode, { theme: 'github-light' }]]
+        rehypePlugins: [[rehypePrettyCode, { theme: 'github-dark' }]]
     },
 })
 

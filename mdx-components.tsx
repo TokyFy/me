@@ -20,7 +20,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </ul>
         ),
         pre: ({ children, ...props }) => (
-            <pre className='!bg-transparent border border-black my-4 p-2' {...props}>
+            <pre className='!bg-transparent border border-white my-4 p-2' {...props}>
                 {children}
             </pre>
         ),

@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     return (
-        <article>
+        <article className='text-neutral-300'>
             <Post />
         </article>
     )
