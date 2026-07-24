@@ -1,5 +1,4 @@
 import Image from "next/image"
-
 export default function Home() {
     return (
         <>
@@ -14,17 +13,17 @@ export default function Home() {
             </div>
             <div className="text-[#8f8f8f] text-[15px] flex flex-col gap-6">
                 <p>
-                    Hello , I'm a computer science student from Madagascar , I love [re]building things to enderstant it in it's root.
-                    In my spar time I enjoy taking abstract picture.
+                    Hello, I&apos;m a computer science student from Madagascar. I love [re]building things to understand them at their root.
+                    In my spare time I enjoy taking abstract photos.
                 </p>
                 <p>
-                    My goal is to live of my passion or just have the time to do it , I vant to be like those pioner in softwar building 
-                    thing like linux and vim.
+                    My goal is to live off my passion, or at least have the time to pursue it. I want to be like those pioneers in software
+                    who built things like Linux and Vim.
                 </p>
                 <p className="text-neutral-600">
-                    Note for recruiter : Please please please call me TT  
+                    Note for recruiters: please, please, please call me TT.
                 </p>
-            </div >
+            </div>
         </>
     )
 }
