@@ -20,9 +20,6 @@ export default function Home() {
                     My goal is to live off my passion, or at least have the time to pursue it. I want to be like those pioneers in software
                     who built things like Linux and Vim.
                 </p>
-                <p className="text-neutral-600">
-                    Note for recruiters: please, please, please call me TT.
-                </p>
             </div>
         </>
     )
