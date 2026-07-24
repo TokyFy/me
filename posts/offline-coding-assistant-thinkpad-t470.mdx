@@ -1,0 +1,101 @@
+---
+title: "An offline coding assistant on a 4GB ThinkPad T470"
+date: 2026-07-24
+---
+
+# An offline coding assistant on a 4GB ThinkPad T470
+
+My ThinkPad T470 has 4GB of RAM, an i5-7300U (2 cores / 4 threads), and no dedicated GPU. That's below what most "run an LLM locally" guides assume, so this is less "pull a model and go" and more "understand exactly where your RAM goes so the OOM killer doesn't eat `ollama serve`."
+
+You will need:
+
+- Ollama installed
+- A CPU with AVX2 (the 7th-gen Kaby Lake chips in the T470 have it — check with `lscpu | grep avx2`)
+
+## Doing the RAM math first
+
+Ollama runs GGUF models via [llama.cpp](https://github.com/ggerganov/llama.cpp) under the hood. Total memory use is roughly:
+
+```
+total_ram ≈ model_weights (Q4_K_M) + KV_cache + activation_overhead
+```
+
+- **Model weights**: at `Q4_K_M`, a dense model is roughly `params_in_billions × 0.6` GB. A 1.5B model → ~0.9GB. A 7B model → ~4.2GB, which alone exceeds your total RAM before the OS even loads.
+- **KV cache**: scales with `context_length × num_layers × hidden_dim × 2 (K and V) × bytes_per_value`. For a 1.5B model at the default 4096-token context, expect 150–300MB. This grows *linearly* with context, so it's the first thing to cut on a 4GB box.
+- **Activation overhead**: a few hundred MB, fairly constant regardless of model size.
+
+On a 4GB machine, your OS + desktop environment + terminal are already claiming 1–1.5GB before Ollama even starts. That leaves roughly 2–2.5GB for weights + KV cache + overhead — which is why 1.5B-class models are the ceiling here, not a preference.
+
+## The model
+
+**Qwen2.5-Coder 1.5B**, `Q4_K_M`:
+
+```bash
+ollama pull qwen2.5-coder:1.5b
+```
+
+It's a dense (non-MoE) transformer, so the whole model has to sit in RAM — no sparse activation to save you here, unlike the larger MoE coder models (`qwen3-coder:30b` etc.) that only activate a fraction of their parameters per token but still need all of them resident in memory anyway, so MoE buys you nothing on a RAM-constrained box.
+
+## Pinning threads to actual cores
+
+By default Ollama/llama.cpp will try to use all logical threads it detects, including hyperthreads, which doesn't help much for memory-bound CPU inference and can add scheduling overhead. Pin it to physical cores:
+
+```bash
+OLLAMA_NUM_THREADS=2 ollama serve
+```
+
+Test both `2` and `4` for your workload — hyperthreading sometimes helps on memory-bound workloads because it hides cache-miss latency, so don't assume physical-core count is always faster.
+
+## Cutting the KV cache down
+
+This is the highest-leverage tuning knob on 4GB. Build a `Modelfile` that caps context instead of relying on the flag every time:
+
+```
+FROM qwen2.5-coder:1.5b
+PARAMETER num_ctx 2048
+PARAMETER num_thread 2
+PARAMETER num_predict 512
+```
+
+```bash
+ollama create coder-lowmem -f Modelfile
+ollama run coder-lowmem
+```
+
+`num_ctx 2048` roughly halves KV cache versus the 4096 default. Drop to `1024` if you're only asking single-function questions and don't need much conversation history.
+
+## mmap, mlock, and why you probably want mmap on
+
+Ollama loads GGUF weights with `mmap` by default, letting the kernel page weights in/out instead of committing them fully to RAM upfront. On a 4GB box this is generally what you want — it lets the OS evict cold pages under pressure rather than OOM-killing the process outright. Don't set `OLLAMA_MLOCK` unless you've confirmed you have RAM to spare; `mlock` pins the entire model in physical RAM and forbids swapping, which on 4GB will just make an OOM more likely, not less.
+
+## Watching it actually happen
+
+While a prompt is running:
+
+```bash
+watch -n1 'ps -o pid,rss,cmd -C ollama'
+```
+
+`RSS` is your ground truth for resident memory — better than trusting the theoretical math above, since GGUF metadata, context buffers, and llama.cpp's own overhead all add non-obvious amounts.
+
+If you see `ollama` getting killed, check the OOM killer's reasoning after the fact:
+
+```bash
+dmesg | grep -i "killed process"
+```
+
+## Swappiness, not swap size
+
+The usual advice is "add a swap file," but the setting that actually matters more on a 4GB laptop is `vm.swappiness` — how eagerly the kernel swaps *before* it's forced to. Lower it so the kernel holds onto RAM for the model longer before reaching for disk, which is orders of magnitude slower:
+
+```bash
+sudo sysctl vm.swappiness=10
+```
+
+Make it persistent in `/etc/sysctl.conf` if it helps.
+
+## Wiring it into an editor
+
+Point [Continue](https://continue.dev/) or any OpenAI-compatible client at `http://localhost:11434/v1`, using `coder-lowmem` as the model name. Keep the editor's own request context short too — most editor integrations send surrounding file content as part of the prompt, and that content counts against `num_ctx` just like chat history does.
+
+That's the whole setup: a 1.5B dense model, threads pinned to physical cores, context capped to fit a 4GB budget, and `RSS` on a `watch` loop so you know exactly when you're about to lose the process. Not fast, but it's yours, and it works with the WiFi off.
