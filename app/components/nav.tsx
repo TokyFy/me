@@ -22,7 +22,7 @@ export default function Nav() {
                         key={link.href}
                         href={link.href}
                         aria-current={isActive ? 'page' : undefined}
-                        className={isActive ? 'underline decoration-wavy decoration-[var(--accent)] underline-offset-2' : undefined}
+                        className={isActive ? 'underline decoration-wavy decoration-[var(--accent)] underline-offset-2 hover:underline hover:decoration-wavy hover:decoration-[var(--accent)]' : 'hover:underline hover:decoration-wavy hover:decoration-[var(--accent)] underline-offset-2'}
                     >
                         {link.label}
                     </Link>

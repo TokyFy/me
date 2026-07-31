@@ -11,7 +11,7 @@ export default async function BlogsIndexPage() {
             <ul className="space-y-2 list-[square] list-inside text-[var(--text)]/80">
                 {filteredPost.map((post) => (
                     <li key={post.slug}>
-                        <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href={`/blogs/${post.slug}`}>
+                        <Link className="transition-opacity hover:underline hover:decoration-wavy hover:decoration-[var(--accent)] underline-offset-2" href={`/blogs/${post.slug}`}>
                             {post.title}
                         </Link>
                     </li>

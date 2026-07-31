@@ -26,14 +26,11 @@ export default async function Home() {
                 </p>
             </section>
             <section className="space-y-2">
-                <div className="font-mono uppercase">Latest blogs</div>
+                <div className="font-mono uppercase underline decoration-wavy decoration-[var(--accent)]">Latest blogs</div>
                 <ul className="space-y-2 list-[square] list-inside">
                     {latestPosts.map((post) => (
                         <li key={post.slug}>
-                            <Link
-                                className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2"
-                                href={`/blogs/${post.slug}`}
-                            >
+                            <Link className="transition-opacity hover:opacity-80 hover:underline hover:decoration-wavy hover:decoration-[var(--accent)] underline-offset-2" href={`/blogs/${post.slug}`}>
                                 {post.title}
                             </Link>
                         </li>
