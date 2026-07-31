@@ -7,7 +7,6 @@ export default async function BlogsIndexPage() {
 
     return (
         <section className="space-y-4">
-            <div className="font-mono text-[14px] uppercase text-[var(--text)]/75">Writing</div>
             <ul className="space-y-2 list-[square] list-inside text-[var(--text)]/80">
                 {filteredPost.map((post) => (
                     <li key={post.slug}>
