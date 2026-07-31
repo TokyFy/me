@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     return (
-        <article className='text-neutral-300'>
+        <article className="space-y-6 text-[var(--text)]/90">
             <Post />
         </article>
     )

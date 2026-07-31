@@ -5,22 +5,22 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         ...components,
         h1: ({ children, ...props }) => (
-            <h1 className="font-mono text-lg uppercase tracking-[0.18em] text-[var(--text)]" {...props}>
+            <h1 className="font-mono text-lg uppercase text-[var(--text)]" {...props}>
                 {children}
             </h1>
         ),
         p: ({ children, ...props }) => (
-            <p className="font-primary py-2 text-[var(--text)]/80" {...props}>
+            <p className="font-primary py-2 text-[var(--text)]/92" {...props}>
                 {children}
             </p>
         ),
         ul: ({ children, ...props }) => (
-            <ul className="list-[square] list-inside text-[var(--text)]/80" {...props}>
+            <ul className="list-[square] list-inside text-[var(--text)]/92" {...props}>
                 {children}
             </ul>
         ),
         pre: ({ children, ...props }) => (
-            <pre className='my-4 overflow-x-auto rounded-xl border border-[var(--muted-hover)] bg-[color-mix(in_srgb,var(--bg)_80%,transparent)] p-4 text-[var(--text)]/90' {...props}>
+            <pre className='my-4 overflow-x-auto rounded-xl border border-[var(--muted-hover)] bg-[color-mix(in_srgb,var(--bg)_92%,transparent)] p-4 text-[var(--text)]/95' {...props}>
                 {children}
             </pre>
         ),
