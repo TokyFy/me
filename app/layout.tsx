@@ -13,30 +13,28 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`font-primary text-[14px] max-w-[640px] mx-auto bg-[#0d0d0d]`}>
-                <div className="pt-12" id="index">
-                    <section className='gap-4'>
-                        <div className='flex gap-6 flex-wrap items-center pb-4 uppercase text-[#8f8f8f]'>
-                            <Link href="/" className='font-mono'>
-                                <p className='text-[14px]'>INDEX</p>
-                            </Link>
-                            <Link href="/blogs/" className='font-mono'>
-                                <p className='text-[14px]'>WRITING</p>
-                            </Link>
-                            <Link href="/projects/" className='font-mono'>
-                                <p className='text-[14px]'>¿¿¿</p>
-                            </Link>
-                        </div>
-
-                    </section>
-                    {children}
-                    <div className='py-6'>
-                        <p className="font-mono uppercase text-[#8f8f8f]">
-                            <Link className="underline decoration-wavy" href="https://github.com/TokyFy/">{"Github"}</Link>{" ✦ "}
-                            <Link className="underline decoration-wavy" target="_blank" href="https://www.linkedin.com/in/tokyfy/">{"LinkedIn"}</Link>{" ✦ "}
-                            <Link className="underline decoration-wavy" href="mailto:tokyfy@outlook.com">{"tokyfy@outlook.com"}</Link>
+            <body className="font-primary min-h-screen bg-[var(--bg)] text-[var(--text)] antialiased text-[14px]">
+                <div className="relative mx-auto flex min-h-screen w-full max-w-[640px] flex-col px-5 py-12 sm:px-6">
+                    <header className="flex items-start justify-between gap-4 pb-8 uppercase text-[var(--text)]/70">
+                        <nav className="flex flex-wrap gap-4 font-mono text-[14px]">
+                            <Link href="/">INDEX</Link>
+                            <Link href="/blogs/">WRITING</Link>
+                            <Link href="/projects/">PROJECTS</Link>
+                        </nav>
+                        <ThemeSwitcher />
+                    </header>
+                    <main className="flex-1 space-y-10" id="index">
+                        {children}
+                    </main>
+                    <footer className="pt-10">
+                        <p className="flex flex-wrap gap-x-3 gap-y-2 font-mono uppercase text-[var(--text)]/70">
+                            <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href="https://github.com/TokyFy/">Github</Link>
+                            <span>✦</span>
+                            <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" target="_blank" href="https://www.linkedin.com/in/tokyfy/">LinkedIn</Link>
+                            <span>✦</span>
+                            <Link className="underline decoration-wavy decoration-[var(--accent)] underline-offset-2" href="mailto:tokyfy@outlook.com">tokyfy@outlook.com</Link>
                         </p>
-                    </div>
+                    </footer>
                 </div>
                 <Analytics />
             </body>

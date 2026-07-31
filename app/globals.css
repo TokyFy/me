@@ -14,20 +14,20 @@
 }
 
 :root {
-    --bg: #d3d1d1;
-    --text: #1a1a1a;
-    --muted: #c2c2c2;
-    --muted-hover: #d4d4d4;
-    --accent: blue;
+    --bg: #f4efe8;
+    --text: #191717;
+    --muted: #ede3d8;
+    --muted-hover: #e1d5c7;
+    --accent: #2f6fed;
     --selection-text: #ffffff;
     color-scheme: light;
 }
 
 [data-theme='dark'] {
-    --bg: #121212;
-    --text: #f5f5f5;
-    --muted: #222222;
-    --muted-hover: #303030;
+    --bg: #111111;
+    --text: #f3f0ea;
+    --muted: #22201d;
+    --muted-hover: #2d2a25;
     --accent: #8ab4f8;
     --selection-text: #111111;
     color-scheme: dark;
@@ -40,7 +40,14 @@
 body {
     background-color: var(--bg);
     color: var(--text);
+    background-image: radial-gradient(circle at top, color-mix(in srgb, var(--accent) 10%, transparent) 0, transparent 45%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04) 0, transparent 36%);
+    background-attachment: fixed;
     transition: background-color 180ms ease, color 180ms ease;
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 1px;
 }
 
 .melt-image {

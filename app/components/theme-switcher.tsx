@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const THEMES = [
     { value: 'light', label: 'Light' },
-    { value: 'dark', label: 'Dark' },
+    { value: 'dark', label: 'Dark_' },
 ]
 
 const STORAGE_KEY = 'theme'
@@ -35,7 +35,7 @@ export default function ThemeSwitcher() {
     return (
         <button
             type="button"
-            className='font-mono w-fit px-1 transition-colors uppercase bg-[var(--muted)] hover:bg-[var(--muted-hover)]'
+            className='font-mono w-fit  px-3 py-1 uppercase'
             onClick={onCycleTheme}
             aria-label={`Switch theme, current: ${currentLabel}`}
             title={`Theme: ${currentLabel}`}
