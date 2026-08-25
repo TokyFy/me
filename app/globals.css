@@ -52,27 +52,6 @@ a {
     font-weight: bold;
 }
 
-@keyframes sparkle-pulse {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.85;
-        filter: drop-shadow(0 0 1px rgba(178, 171, 242, 0.2));
-    }
-    50% {
-        transform: scale(1.18) rotate(12deg);
-        opacity: 1;
-        filter: drop-shadow(0 0 6px rgba(178, 171, 242, 0.7));
-    }
-}
-
-.sparkle-accent {
-    color: var(--accent);
-    display: inline-block;
-    animation: sparkle-pulse 4.5s ease-in-out infinite;
-    transform-origin: center;
-    will-change: transform, filter, opacity;
-}
-
 /* Inline keyword accents that appear seamlessly when hovering the paragraph without any layout shift */
 .bio-paragraph {
     transition: color 0.3s ease;

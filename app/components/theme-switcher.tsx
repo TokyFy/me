@@ -11,8 +11,10 @@ const STORAGE_KEY = 'theme'
 
 export default function ThemeSwitcher() {
     const [theme, setTheme] = useState('light')
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
+        setMounted(true)
         const savedTheme = window.localStorage.getItem(STORAGE_KEY)
         const initialTheme = savedTheme && THEMES.some((item) => item.value === savedTheme) ? savedTheme : 'light'
 
@@ -30,12 +32,15 @@ export default function ThemeSwitcher() {
         onThemeChange(theme === 'dark' ? 'light' : 'dark')
     }
 
-    const currentLabel = THEMES.find((item) => item.value === theme)?.label ?? 'Theme'
+    const currentLabel = mounted
+        ? THEMES.find((item) => item.value === theme)?.label ?? 'Theme'
+        : 'Light'
 
     return (
         <button
             type="button"
-            className='font-mono w-fit  px-3 py-1 uppercase'
+            suppressHydrationWarning
+            className='font-mono w-fit px-3 py-1 uppercase'
             onClick={onCycleTheme}
             aria-label={`Switch theme, current: ${currentLabel}`}
             title={`Theme: ${currentLabel}`}

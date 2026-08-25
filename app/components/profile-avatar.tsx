@@ -8,6 +8,7 @@ interface ProfileAvatarProps {
     alt?: string
     size?: number
     className?: string
+    isRevealed?: boolean
 }
 
 const VERTEX_SHADER_SOURCE = `
@@ -36,7 +37,7 @@ void main() {
     // Clamp coordinate safely inside texture bounds
     vec2 uv = clamp(v_texCoord, 0.0001, 0.9999);
 
-    // Hover factor eased for smooth reveal
+    // Hover/reveal factor (1.0 = normal/clear, 0.0 = pixelated & monochrome)
     float h = clamp(u_hover, 0.0, 1.0);
     float smoothH = smoothstep(0.0, 1.0, h);
     
@@ -69,11 +70,17 @@ export default function ProfileAvatar({
     alt = 'Toky fy',
     size = 148,
     className = '',
+    isRevealed = false,
 }: ProfileAvatarProps) {
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const [webglSupported, setWebglSupported] = useState(true)
     const [isLoaded, setIsLoaded] = useState(false)
+    const targetHoverRef = useRef(isRevealed ? 1 : 0)
+
+    useEffect(() => {
+        targetHoverRef.current = isRevealed ? 1 : 0
+    }, [isRevealed])
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -191,8 +198,7 @@ export default function ProfileAvatar({
 
         let animationFrameId: number
         let startTime = performance.now()
-        let currentHover = 0
-        let targetHover = 0
+        let currentHover = targetHoverRef.current
         let targetMouse = { x: 0.5, y: 0.5 }
         let currentMouse = { x: 0.5, y: 0.5 }
         let isVisible = true
@@ -208,12 +214,13 @@ export default function ProfileAvatar({
         const render = (now: number) => {
             if (isVisible) {
                 const elapsed = (now - startTime) / 1000
+                const target = targetHoverRef.current
 
                 // Smooth interpolation for hover and mouse position
-                if (Math.abs(targetHover - currentHover) < 0.0005) {
-                    currentHover = targetHover
+                if (Math.abs(target - currentHover) < 0.0005) {
+                    currentHover = target
                 } else {
-                    currentHover += (targetHover - currentHover) * 0.08
+                    currentHover += (target - currentHover) * 0.08
                 }
                 currentMouse.x += (targetMouse.x - currentMouse.x) * 0.12
                 currentMouse.y += (targetMouse.y - currentMouse.y) * 0.12
@@ -237,68 +244,9 @@ export default function ProfileAvatar({
 
         animationFrameId = requestAnimationFrame(render)
 
-        // Mouse & Touch interaction
-        const handleMouseMove = (e: MouseEvent) => {
-            const rect = canvas.getBoundingClientRect()
-            const x = (e.clientX - rect.left) / rect.width
-            const y = (e.clientY - rect.top) / rect.height
-            targetMouse = { x: Math.max(0, Math.min(1, x)), y: Math.max(0, Math.min(1, y)) }
-            targetHover = 1
-        }
-
-        const handleMouseEnter = () => {
-            targetHover = 1
-        }
-
-        const handleMouseLeave = () => {
-            targetHover = 0
-        }
-
-        const handleTouchStart = (e: TouchEvent) => {
-            if (e.touches.length > 0) {
-                const rect = canvas.getBoundingClientRect()
-                const x = (e.touches[0].clientX - rect.left) / rect.width
-                const y = (e.touches[0].clientY - rect.top) / rect.height
-                targetMouse = { x: Math.max(0, Math.min(1, x)), y: Math.max(0, Math.min(1, y)) }
-                targetHover = 1
-            }
-        }
-
-        const handleTouchMove = (e: TouchEvent) => {
-            if (e.touches.length > 0) {
-                const rect = canvas.getBoundingClientRect()
-                const x = (e.touches[0].clientX - rect.left) / rect.width
-                const y = (e.touches[0].clientY - rect.top) / rect.height
-                targetMouse = { x: Math.max(0, Math.min(1, x)), y: Math.max(0, Math.min(1, y)) }
-                targetHover = 1
-            }
-        }
-
-        const handleTouchEnd = () => {
-            targetHover = 0
-        }
-
-        const el = containerRef.current
-        if (el) {
-            el.addEventListener('mousemove', handleMouseMove)
-            el.addEventListener('mouseenter', handleMouseEnter)
-            el.addEventListener('mouseleave', handleMouseLeave)
-            el.addEventListener('touchstart', handleTouchStart)
-            el.addEventListener('touchmove', handleTouchMove)
-            el.addEventListener('touchend', handleTouchEnd)
-        }
-
         return () => {
             cancelAnimationFrame(animationFrameId)
             observer.disconnect()
-            if (el) {
-                el.removeEventListener('mousemove', handleMouseMove)
-                el.removeEventListener('mouseenter', handleMouseEnter)
-                el.removeEventListener('mouseleave', handleMouseLeave)
-                el.removeEventListener('touchstart', handleTouchStart)
-                el.removeEventListener('touchmove', handleTouchMove)
-                el.removeEventListener('touchend', handleTouchEnd)
-            }
             gl.deleteProgram(program)
             gl.deleteShader(vertShader)
             gl.deleteShader(fragShader)
@@ -316,7 +264,7 @@ export default function ProfileAvatar({
         <div
             ref={containerRef}
             id="profile-avatar-container"
-            className={`relative overflow-hidden rounded-sm cursor-pointer select-none transition-transform duration-300 active:scale-95 ${className}`}
+            className={`relative overflow-hidden select-none transition-transform duration-300 ${className}`}
             style={{ width: `${size}px`, height: `${size}px` }}
         >
             {/* Fallback & Initial Image */}
@@ -326,7 +274,7 @@ export default function ProfileAvatar({
                 width={size}
                 height={size}
                 priority
-                className={`rounded-sm object-cover transition-opacity duration-300 ${
+                className={`object-cover transition-opacity duration-300 ${
                     webglSupported && isLoaded ? 'opacity-0' : 'opacity-100'
                 }`}
             />
@@ -338,7 +286,7 @@ export default function ProfileAvatar({
                     id="profile-avatar-canvas"
                     width={pixelWidth}
                     height={pixelHeight}
-                    className={`absolute inset-0 h-full w-full rounded-sm transition-opacity duration-300 ${
+                    className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
                         isLoaded ? 'opacity-100' : 'opacity-0'
                     }`}
                 />

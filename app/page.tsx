@@ -1,22 +1,14 @@
 import Link from "next/link"
 import { getAllPostsMetadata } from "@lib/posts"
-import ProfileAvatar from "@components/profile-avatar"
+import HeroProfileSection from "@components/hero-profile-section"
 
 export default async function Home() {
     const posts = await getAllPostsMetadata()
     const latestPosts = posts.filter((post) => post.title !== "INTERNAL").slice(0, 3)
 
     return (
-        <div className="space-y-4">
-            <section className="space-y-6">
-                <ProfileAvatar src="/me.png" alt="Toky fy" size={148} />
-                <div className="text-[15px]">
-                    <p className="font-mono uppercase">
-                        Toky Fy <span className="sparkle-accent ml-0.5">✦</span>
-                    </p>
-                    <p>Software engineer</p>
-                </div>
-            </section>
+        <div className="space-y-6">
+            <HeroProfileSection src="/me.png" alt="Toky fy" size={148} />
             <section className="space-y-4 text-[15px] leading-relaxed text-[var(--text)]/75">
                 <p className="bio-paragraph">
                     Hey, I&apos;m a computer science student and developer from Madagascar.
