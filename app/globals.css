@@ -51,3 +51,59 @@ a {
     color: var(--selection-text);
     font-weight: bold;
 }
+
+@keyframes sparkle-pulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.85;
+        filter: drop-shadow(0 0 1px rgba(178, 171, 242, 0.2));
+    }
+    50% {
+        transform: scale(1.18) rotate(12deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 6px rgba(178, 171, 242, 0.7));
+    }
+}
+
+.sparkle-accent {
+    color: var(--accent);
+    display: inline-block;
+    animation: sparkle-pulse 4.5s ease-in-out infinite;
+    transform-origin: center;
+    will-change: transform, filter, opacity;
+}
+
+/* Inline keyword accents that appear seamlessly when hovering the paragraph without any layout shift */
+.bio-paragraph {
+    transition: color 0.3s ease;
+}
+
+.kw-highlight {
+    position: relative;
+    display: inline;
+    color: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1.5px;
+    padding-bottom: 1px;
+    border-radius: 0;
+    transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.25s ease;
+    cursor: default;
+}
+
+/* When the user hovers the bio paragraph, highlight the keywords cleanly */
+.bio-paragraph:hover .kw-highlight {
+    color: var(--text);
+    background-size: 100% 1.5px;
+}
+
+/* When hovering directly on a keyword, give it a soft accent color boost */
+.bio-paragraph .kw-highlight:hover {
+    color: var(--accent);
+}
+
+

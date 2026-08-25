@@ -11,19 +11,21 @@ export default async function Home() {
             <section className="space-y-6">
                 <ProfileAvatar src="/me.png" alt="Toky fy" size={148} />
                 <div className="text-[15px]">
-                    <p className="font-mono uppercase">Toky Fy ✦</p>
+                    <p className="font-mono uppercase">
+                        Toky Fy <span className="sparkle-accent ml-0.5">✦</span>
+                    </p>
                     <p>Software engineer</p>
                 </div>
             </section>
             <section className="space-y-4 text-[15px] leading-relaxed text-[var(--text)]/75">
-                <p>
+                <p className="bio-paragraph">
                     Hey, I&apos;m a computer science student and developer from Madagascar.
-                    I have a genuine passion for low-level systems, writing C, living inside Vim, and exploring the depths of Linux.
+                    I have a genuine passion for low-level systems, writing <span className="kw-highlight">C</span>, living inside <span className="kw-highlight">Vim</span>, and exploring the depths of <span className="kw-highlight">Linux</span>.
                     I love taking things apart and rebuilding them from first principles to truly understand how they work under the hood.
                 </p>
-                <p>
-                    I&apos;m inspired by the UNIX philosophy and the early pioneers of software—building tools that are simple, fast, and enduring.
-                    Outside the terminal, I enjoy capturing abstract photography.
+                <p className="bio-paragraph">
+                    I&apos;m inspired by the <span className="kw-highlight">UNIX philosophy</span> and the early pioneers of software—building tools that are simple, fast, and enduring.
+                    Outside the terminal, I enjoy capturing <span className="kw-highlight">abstract photography</span>.
                 </p>
             </section>
             <section className="space-y-2">
