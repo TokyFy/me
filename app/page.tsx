@@ -15,14 +15,15 @@ export default async function Home() {
                     <p>Software engineer</p>
                 </div>
             </section>
-            <section className="space-y-6 text-[15px] text-[var(--text)]/70">
+            <section className="space-y-4 text-[15px] leading-relaxed text-[var(--text)]/75">
                 <p>
-                    Hello, I&apos;m a computer science student from Madagascar. I love [re]building things to understand them at their root.
-                    In my spare time I enjoy taking abstract photos.
+                    Hey, I&apos;m a computer science student and developer from Madagascar.
+                    I have a genuine passion for low-level systems, writing C, living inside Vim, and exploring the depths of Linux.
+                    I love taking things apart and rebuilding them from first principles to truly understand how they work under the hood.
                 </p>
                 <p>
-                    My goal is to live off my passion, or at least have the time to pursue it. I want to be like those pioneers in software
-                    who built things like Linux and Vim.
+                    I&apos;m inspired by the UNIX philosophy and the early pioneers of software—building tools that are simple, fast, and enduring.
+                    Outside the terminal, I enjoy capturing abstract photography.
                 </p>
             </section>
             <section className="space-y-2">

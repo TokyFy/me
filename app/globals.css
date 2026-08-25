@@ -7,8 +7,8 @@
     --text: #191717;
     --muted: #ede3d8;
     --muted-hover: #e1d5c7;
-    --accent: #2f6fed;
-    --selection-text: #ffffff;
+    --accent: #b2abf2;
+    --selection-text: #191717;
     color-scheme: light;
 }
 
@@ -17,7 +17,7 @@
     --text: #f3f0ea;
     --muted: #22201d;
     --muted-hover: #2d2a25;
-    --accent: #8ab4f8;
+    --accent: #b2abf2;
     --selection-text: #111111;
     color-scheme: dark;
 }
