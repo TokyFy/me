@@ -9,6 +9,11 @@
     --muted-hover: #e1d5c7;
     --accent: #b2abf2;
     --selection-text: #191717;
+    --code-bg: #e2ded8;
+    --code-header-bg: #dad5cd;
+    --code-text: #262424;
+    --code-inline-bg: #ded9d1;
+    --code-inline-text: #191717;
     color-scheme: light;
 }
 
@@ -19,6 +24,11 @@
     --muted-hover: #2d2a25;
     --accent: #b2abf2;
     --selection-text: #111111;
+    --code-bg: #151515;
+    --code-header-bg: #1a1a1a;
+    --code-text: #d4d4d8;
+    --code-inline-bg: #1e1d1b;
+    --code-inline-text: #f3f0ea;
     color-scheme: dark;
 }
 
@@ -80,9 +90,21 @@ a {
     background-size: 100% 1.5px;
 }
 
-/* When hovering directly on a keyword, give it a soft accent color boost */
-.bio-paragraph .kw-highlight:hover {
-    color: var(--accent);
+/* Code block and rehype-pretty-code styling */
+pre [data-line] {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
+
+pre [data-highlighted-line] {
+    background-color: var(--muted);
+    border-left: 2px solid var(--accent);
+}
+
+/* Neutralize high-saturation syntax tokens to ensure calm neutral aesthetic */
+pre code span {
+    font-family: inherit;
+}
+
 
 

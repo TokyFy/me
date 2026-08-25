@@ -30,6 +30,8 @@ const nextConfig = {
     webpack: (config) => {
         config.resolve.alias = {
             ...config.resolve.alias,
+            '@': path.resolve(process.cwd()),
+            '@components': path.resolve(process.cwd(), 'app/components'),
             '@lib': path.resolve(process.cwd(), 'lib'),
             '@posts': path.resolve(process.cwd(), 'posts'),
         }
@@ -41,7 +43,15 @@ const nextConfig = {
 const withMDX = createMDX({
     options: {
         remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
-        rehypePlugins: [[rehypePrettyCode, { theme: 'github-dark' }]]
+        rehypePlugins: [
+            [
+                rehypePrettyCode,
+                {
+                    theme: 'github-dark-dimmed',
+                    keepBackground: false,
+                },
+            ],
+        ],
     },
 })
 
