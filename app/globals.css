@@ -17,7 +17,8 @@
     color-scheme: light;
 }
 
-[data-theme='dark'] {
+[data-theme='dark'],
+html.dark {
     --bg: #111111;
     --text: #f3f0ea;
     --muted: #22201d;
@@ -30,6 +31,22 @@
     --code-inline-bg: #1e1d1b;
     --code-inline-text: #f3f0ea;
     color-scheme: dark;
+}
+
+[data-theme='light'],
+html.light {
+    --bg: #e9e9e9;
+    --text: #191717;
+    --muted: #ede3d8;
+    --muted-hover: #e1d5c7;
+    --accent: #b2abf2;
+    --selection-text: #191717;
+    --code-bg: #e2ded8;
+    --code-header-bg: #dad5cd;
+    --code-text: #262424;
+    --code-inline-bg: #ded9d1;
+    --code-inline-text: #191717;
+    color-scheme: light;
 }
 
 * {
@@ -99,6 +116,30 @@ pre [data-line] {
 pre [data-highlighted-line] {
     background-color: var(--muted);
     border-left: 2px solid var(--accent);
+}
+
+/* Shiki dual-theme token switching */
+html.dark pre code span,
+[data-theme='dark'] pre code span {
+    color: var(--shiki-dark, inherit) !important;
+}
+
+html.light pre code span,
+[data-theme='light'] pre code span,
+html:not(.dark) pre code span {
+    color: var(--shiki-light, inherit);
+}
+
+/* Fallback if rehype-pretty-code renders duplicate elements with data-theme */
+html.dark [data-theme='light'],
+[data-theme='dark'] [data-theme='light'] {
+    display: none !important;
+}
+
+html.light [data-theme='dark'],
+[data-theme='light'] [data-theme='dark'],
+html:not(.dark) [data-theme='dark'] {
+    display: none !important;
 }
 
 /* Neutralize high-saturation syntax tokens to ensure calm neutral aesthetic */

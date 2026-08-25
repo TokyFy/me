@@ -19,12 +19,26 @@ export default function ThemeSwitcher() {
         const initialTheme = savedTheme && THEMES.some((item) => item.value === savedTheme) ? savedTheme : 'light'
 
         document.documentElement.dataset.theme = initialTheme
+        if (initialTheme === 'dark') {
+            document.documentElement.classList.add('dark')
+            document.documentElement.classList.remove('light')
+        } else {
+            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.add('light')
+        }
         setTheme(initialTheme)
     }, [])
 
     function onThemeChange(nextTheme: string) {
         setTheme(nextTheme)
         document.documentElement.dataset.theme = nextTheme
+        if (nextTheme === 'dark') {
+            document.documentElement.classList.add('dark')
+            document.documentElement.classList.remove('light')
+        } else {
+            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.add('light')
+        }
         window.localStorage.setItem(STORAGE_KEY, nextTheme)
     }
 

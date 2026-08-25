@@ -8,7 +8,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ...components,
         h1: ({ children, ...props }) => (
             <h1
-                className="font-mono text-xl font-semibold text-[var(--text)] mt-8 mb-4 tracking-tight"
+                className="font-mono text-xl font-semibold text-neutral-900 dark:text-neutral-100 mt-8 mb-4 tracking-tight"
                 {...props}
             >
                 {children}
@@ -16,7 +16,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         h2: ({ children, ...props }) => (
             <h2
-                className="font-mono text-[17px] font-medium text-[var(--text)] mt-8 mb-3 pb-1.5 border-b border-[var(--muted-hover)]/70 tracking-tight"
+                className="font-mono text-[17px] font-medium text-neutral-900 dark:text-neutral-100 mt-8 mb-3 pb-1.5 border-b border-neutral-300 dark:border-neutral-800 tracking-tight"
                 {...props}
             >
                 {children}
@@ -24,7 +24,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         h3: ({ children, ...props }) => (
             <h3
-                className="font-mono text-[15px] font-medium text-[var(--text)] mt-6 mb-2 tracking-tight"
+                className="font-mono text-[15px] font-medium text-neutral-900 dark:text-neutral-100 mt-6 mb-2 tracking-tight"
                 {...props}
             >
                 {children}
@@ -32,7 +32,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         h4: ({ children, ...props }) => (
             <h4
-                className="font-mono text-[14px] font-medium text-[var(--text)] mt-5 mb-2 text-[var(--text)]/90"
+                className="font-mono text-[14px] font-medium text-neutral-800 dark:text-neutral-200 mt-5 mb-2"
                 {...props}
             >
                 {children}
@@ -40,7 +40,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         p: ({ children, ...props }) => (
             <p
-                className="my-3 leading-relaxed text-[var(--text)]/85 text-[15px]"
+                className="my-3 leading-relaxed text-neutral-800 dark:text-neutral-300 text-[15px]"
                 {...props}
             >
                 {children}
@@ -48,7 +48,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         ul: ({ children, ...props }) => (
             <ul
-                className="my-3 space-y-1.5 list-[square] list-inside pl-1 text-[15px] text-[var(--text)]/85 leading-relaxed"
+                className="my-3 space-y-1.5 list-[square] list-inside pl-1 text-[15px] text-neutral-800 dark:text-neutral-300 leading-relaxed"
                 {...props}
             >
                 {children}
@@ -56,7 +56,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         ol: ({ children, ...props }) => (
             <ol
-                className="my-3 space-y-1.5 list-decimal list-inside pl-1 text-[15px] text-[var(--text)]/85 leading-relaxed"
+                className="my-3 space-y-1.5 list-decimal list-inside pl-1 text-[15px] text-neutral-800 dark:text-neutral-300 leading-relaxed"
                 {...props}
             >
                 {children}
@@ -69,7 +69,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         blockquote: ({ children, ...props }) => (
             <blockquote
-                className="my-4 border-l-2 border-[var(--accent)] pl-4 py-1.5 italic text-[14.5px] text-[var(--text)]/75 bg-[var(--muted)]/25 rounded-r-md"
+                className="my-4 border-l-2 border-neutral-400 dark:border-neutral-600 pl-4 py-1.5 italic text-[14.5px] text-neutral-700 dark:text-neutral-400 bg-neutral-200/50 dark:bg-neutral-800/50"
                 {...props}
             >
                 {children}
@@ -77,7 +77,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         hr: (props) => (
             <hr
-                className="my-8 border-0 border-t border-[var(--muted-hover)]"
+                className="my-8 border-0 border-t border-neutral-300 dark:border-neutral-800"
                 {...props}
             />
         ),
@@ -85,12 +85,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             return <CodeBlock {...props} />
         },
         code: ({ children, className = '', ...props }: React.HTMLAttributes<HTMLElement>) => {
-            // Check if this is an inline code tag (not inside a pre block with line data)
             const isInline = !className.includes('language-') && typeof children === 'string'
             if (isInline) {
                 return (
                     <code
-                        className="font-mono text-[13px] px-1.5 py-0.5 mx-0.5 rounded bg-[var(--code-inline-bg)] text-[var(--code-inline-text)] border border-[var(--muted-hover)]/80"
+                        className="font-mono text-[13px] px-1.5 py-0.5 mx-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700"
                         {...props}
                     >
                         {children}
@@ -111,7 +110,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-[14px] text-[var(--text)] underline decoration-wavy decoration-[var(--accent)] underline-offset-2 hover:opacity-80 transition-opacity"
+                        className="font-mono text-[14px] text-neutral-900 dark:text-neutral-100 underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 hover:opacity-80 transition-opacity"
                         {...props}
                     >
                         {children}
@@ -121,7 +120,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             return (
                 <Link
                     href={href || '#'}
-                    className="font-mono text-[14px] text-[var(--text)] underline decoration-wavy decoration-[var(--accent)] underline-offset-2 hover:opacity-80 transition-opacity"
+                    className="font-mono text-[14px] text-neutral-900 dark:text-neutral-100 underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 hover:opacity-80 transition-opacity"
                     {...props}
                 >
                     {children}
@@ -129,47 +128,47 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             )
         },
         strong: ({ children, ...props }) => (
-            <strong className="font-semibold text-[var(--text)]" {...props}>
+            <strong className="font-semibold text-neutral-900 dark:text-neutral-100" {...props}>
                 {children}
             </strong>
         ),
         em: ({ children, ...props }) => (
-            <em className="italic text-[var(--text)]/90" {...props}>
+            <em className="italic text-neutral-800 dark:text-neutral-200" {...props}>
                 {children}
             </em>
         ),
         del: ({ children, ...props }) => (
-            <del className="line-through text-[var(--text)]/60" {...props}>
+            <del className="line-through text-neutral-500 dark:text-neutral-500" {...props}>
                 {children}
             </del>
         ),
         kbd: ({ children, ...props }) => (
             <kbd
-                className="font-mono text-[12px] px-1.5 py-0.5 mx-0.5 rounded bg-[var(--muted)] text-[var(--text)] border border-[var(--muted-hover)] shadow-xs"
+                className="font-mono text-[12px] px-1.5 py-0.5 mx-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700"
                 {...props}
             >
                 {children}
             </kbd>
         ),
         table: ({ children, ...props }) => (
-            <div className="my-5 overflow-x-auto rounded-md border border-[var(--muted-hover)]">
+            <div className="my-5 overflow-x-auto border border-neutral-300 dark:border-neutral-800">
                 <table className="w-full text-left text-[14px] border-collapse" {...props}>
                     {children}
                 </table>
             </div>
         ),
         thead: ({ children, ...props }) => (
-            <thead className="bg-[var(--muted)]/50 text-[var(--text)] font-mono border-b border-[var(--muted-hover)]" {...props}>
+            <thead className="bg-neutral-200/60 dark:bg-neutral-800/60 text-neutral-900 dark:text-neutral-100 font-mono border-b border-neutral-300 dark:border-neutral-800" {...props}>
                 {children}
             </thead>
         ),
         tbody: ({ children, ...props }) => (
-            <tbody className="divide-y divide-[var(--muted-hover)]/60 text-[var(--text)]/85" {...props}>
+            <tbody className="divide-y divide-neutral-300/60 dark:divide-neutral-800/60 text-neutral-800 dark:text-neutral-300" {...props}>
                 {children}
             </tbody>
         ),
         tr: ({ children, ...props }) => (
-            <tr className="hover:bg-[var(--muted)]/20 transition-colors" {...props}>
+            <tr className="hover:bg-neutral-200/30 dark:hover:bg-neutral-800/30 transition-colors" {...props}>
                 {children}
             </tr>
         ),

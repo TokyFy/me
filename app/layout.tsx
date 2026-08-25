@@ -27,6 +27,29 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                try {
+                                    var saved = localStorage.getItem('theme');
+                                    var theme = (saved === 'dark' || saved === 'light') ? saved : 'light';
+                                    var root = document.documentElement;
+                                    root.dataset.theme = theme;
+                                    if (theme === 'dark') {
+                                        root.classList.add('dark');
+                                        root.classList.remove('light');
+                                    } else {
+                                        root.classList.remove('dark');
+                                        root.classList.add('light');
+                                    }
+                                } catch(e) {}
+                            })();
+                        `,
+                    }}
+                />
+            </head>
             <body suppressHydrationWarning className={`${inter.variable} ${publicMono.variable} font-primary min-h-screen bg-[var(--bg)] text-[var(--text)] antialiased text-[14px]`}>
                 <div className="relative mx-auto flex min-h-screen w-full max-w-[640px] flex-col px-5 py-12 sm:px-6">
                     <header className="flex items-start justify-between gap-4 pb-8 uppercase text-[var(--text)]/70">
