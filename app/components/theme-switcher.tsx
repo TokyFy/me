@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const THEMES = [
     { value: 'light', label: 'Light' },
-    { value: 'dark', label: 'Dark_' },
+    { value: 'dark', label: 'Darky' },
 ]
 
 const STORAGE_KEY = 'theme'
