@@ -6,6 +6,7 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import rehypePrettyCode from 'rehype-pretty-code'
 
 const nextConfig = {
+    output: 'standalone',
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
     images: {
         remotePatterns: [

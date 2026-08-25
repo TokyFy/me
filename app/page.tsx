@@ -1,6 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 import { getAllPostsMetadata } from "@lib/posts"
+import ProfileAvatar from "@components/profile-avatar"
 
 export default async function Home() {
     const posts = await getAllPostsMetadata()
@@ -9,7 +9,7 @@ export default async function Home() {
     return (
         <div className="space-y-4">
             <section className="space-y-6">
-                <Image className="melt-image rounded-sm" width={148} height={148} alt="Toky fy" src={"/me.png"} />
+                <ProfileAvatar src="/me.png" alt="Toky fy" size={148} />
                 <div className="text-[15px]">
                     <p className="font-mono uppercase">Toky Fy ✦</p>
                     <p>Software engineer</p>

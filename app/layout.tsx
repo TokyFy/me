@@ -6,7 +6,6 @@ import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import Nav from '@components/nav';
 import ThemeSwitcher from '@components/theme-switcher';
-import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
     subsets: ['latin'],
@@ -47,7 +46,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                         </p>
                     </footer>
                 </div>
-                <Analytics />
             </body>
         </html>
     )
