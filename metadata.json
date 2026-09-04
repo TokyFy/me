@@ -1,6 +1,6 @@
 {
   "name": "Toky Fy Portfolio",
-  "description": "Personal portfolio and blog of Toky Fy",
+  "description": "Personal portfolio, blog, and guestbook of Toky Fy",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -7,6 +7,7 @@ const LINKS = [
     { href: '/', label: 'INDEX' },
     { href: '/blogs', label: 'WRITING' },
     { href: '/projects', label: 'PROJECTS' },
+    { href: '/text', label: 'TEXT' },
 ]
 
 export default function Nav() {
