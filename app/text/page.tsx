@@ -1,4 +1,3 @@
-import { getGuestbookEntries } from '@/lib/guestbook'
 import GuestbookClient from './guestbook-client'
 
 export const dynamic = 'force-dynamic'
@@ -8,12 +7,10 @@ export const metadata = {
     description: 'A simple guestbook and message board.',
 }
 
-export default async function TextPage() {
-    const { entries } = await getGuestbookEntries()
-
+export default function TextPage() {
     return (
         <section>
-            <GuestbookClient initialEntries={entries} />
+            <GuestbookClient />
         </section>
     )
 }

@@ -4,11 +4,12 @@ import React, { useState, useRef, useEffect } from 'react'
 import type { GuestbookEntry } from '@/lib/guestbook'
 
 interface GuestbookClientProps {
-    initialEntries: GuestbookEntry[]
+    initialEntries?: GuestbookEntry[]
 }
 
 export default function GuestbookClient({ initialEntries }: GuestbookClientProps) {
-    const [entries, setEntries] = useState<GuestbookEntry[]>(initialEntries)
+    const [entries, setEntries] = useState<GuestbookEntry[]>(initialEntries || [])
+    const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(false)
     const [name, setName] = useState('')
     const [link, setLink] = useState('')
@@ -16,6 +17,34 @@ export default function GuestbookClient({ initialEntries }: GuestbookClientProps
     const [submitting, setSubmitting] = useState(false)
     const [statusMessage, setStatusMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+    useEffect(() => {
+        let isMounted = true
+
+        const fetchEntries = async () => {
+            try {
+                const res = await fetch('/api/guestbook')
+                if (res.ok) {
+                    const data = await res.json()
+                    if (isMounted && Array.isArray(data.entries)) {
+                        setEntries(data.entries)
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to load guestbook messages:', err)
+            } finally {
+                if (isMounted) {
+                    setLoading(false)
+                }
+            }
+        }
+
+        fetchEntries()
+
+        return () => {
+            isMounted = false
+        }
+    }, [])
 
     useEffect(() => {
         if (textareaRef.current) {
@@ -78,7 +107,11 @@ export default function GuestbookClient({ initialEntries }: GuestbookClientProps
         <div className="space-y-6">
             {/* Messages on Top */}
             <div className="space-y-3">
-                {entries.length === 0 ? (
+                {loading ? (
+                    <p className="font-mono text-[13px] text-[var(--text)]/50 py-2">
+                        Loading
+                    </p>
+                ) : entries.length === 0 ? (
                     <p className="font-mono text-[13px] text-[var(--text)]/50 py-2">
                         No messages yet. Be the first to leave a note.
                     </p>
@@ -120,97 +153,99 @@ export default function GuestbookClient({ initialEntries }: GuestbookClientProps
             </div>
 
             {/* Link to Toggle Form / Form Container */}
-            <div className="pt-2">
-                {!showForm ? (
-                    <div className="flex items-center gap-4">
-                        <button
-                            type="button"
-                            onClick={() => {
-                                setShowForm(true)
-                                setStatusMessage(null)
-                            }}
-                            className="font-mono text-[13px] text-[var(--text)]/60 hover:text-[var(--text)] underline underline-offset-4 decoration-dotted transition-colors cursor-pointer"
-                        >
-                            Add your comment
-                        </button>
-                        {statusMessage && (
-                            <span
-                                className={`font-mono text-[12px] ${
-                                    statusMessage.type === 'error' ? 'text-red-500' : 'text-emerald-500'
-                                }`}
-                            >
-                                {statusMessage.text}
-                            </span>
-                        )}
-                    </div>
-                ) : (
-                    <form onSubmit={handleSubmit} className="space-y-2.5 pt-1 font-mono">
-                        <div className="flex flex-col sm:flex-row gap-2.5">
-                            <input
-                                id="guestbook-name"
-                                type="text"
-                                required
-                                maxLength={60}
-                                placeholder="name *"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className="flex-1 bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors"
-                            />
-                            <input
-                                id="guestbook-link"
-                                type="text"
-                                maxLength={120}
-                                placeholder="link (optional)"
-                                value={link}
-                                onChange={(e) => setLink(e.target.value)}
-                                className="flex-1 bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors"
-                            />
-                        </div>
-
-                        <div>
-                            <textarea
-                                ref={textareaRef}
-                                id="guestbook-message"
-                                required
-                                rows={1}
-                                maxLength={500}
-                                placeholder="message *"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                className="w-full bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors resize-none overflow-hidden"
-                            />
-                        </div>
-
-                        <div className="flex items-center gap-3 pt-1 text-[11px]">
-                            <button
-                                type="submit"
-                                disabled={submitting}
-                                className="underline decoration-dotted underline-offset-4 text-[var(--text)] hover:opacity-70 disabled:opacity-40 cursor-pointer"
-                            >
-                                {submitting ? 'posting...' : 'submit'}
-                            </button>
+            {!loading && (
+                <div className="pt-2">
+                    {!showForm ? (
+                        <div className="flex items-center gap-4">
                             <button
                                 type="button"
                                 onClick={() => {
-                                    setShowForm(false)
+                                    setShowForm(true)
                                     setStatusMessage(null)
                                 }}
-                                className="text-[var(--text)]/50 hover:text-[var(--text)] transition-colors cursor-pointer"
+                                className="font-mono text-[13px] text-[var(--text)]/60 hover:text-[var(--text)] underline underline-offset-4 decoration-dotted transition-colors cursor-pointer"
                             >
-                                cancel
+                                Add your comment
                             </button>
-
                             {statusMessage && (
                                 <span
-                                    className={statusMessage.type === 'error' ? 'text-red-500' : 'text-emerald-500'}
+                                    className={`font-mono text-[12px] ${
+                                        statusMessage.type === 'error' ? 'text-red-500' : 'text-emerald-500'
+                                    }`}
                                 >
                                     {statusMessage.text}
                                 </span>
                             )}
                         </div>
-                    </form>
-                )}
-            </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="space-y-2.5 pt-1 font-mono">
+                            <div className="flex flex-col sm:flex-row gap-2.5">
+                                <input
+                                    id="guestbook-name"
+                                    type="text"
+                                    required
+                                    maxLength={60}
+                                    placeholder="name *"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className="flex-1 bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors"
+                                />
+                                <input
+                                    id="guestbook-link"
+                                    type="text"
+                                    maxLength={120}
+                                    placeholder="link (optional)"
+                                    value={link}
+                                    onChange={(e) => setLink(e.target.value)}
+                                    className="flex-1 bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <textarea
+                                    ref={textareaRef}
+                                    id="guestbook-message"
+                                    required
+                                    rows={1}
+                                    maxLength={500}
+                                    placeholder="message *"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    className="w-full bg-transparent border-b border-dotted border-neutral-400 dark:border-neutral-600 py-1 font-mono text-[12px] text-[var(--text)] placeholder:font-mono placeholder:text-[11px] placeholder:text-black/50 dark:placeholder:text-white/50 focus:outline-none focus:border-[var(--text)] transition-colors resize-none overflow-hidden"
+                                />
+                            </div>
+
+                            <div className="flex items-center gap-3 pt-1 text-[11px]">
+                                <button
+                                    type="submit"
+                                    disabled={submitting}
+                                    className="underline decoration-dotted underline-offset-4 text-[var(--text)] hover:opacity-70 disabled:opacity-40 cursor-pointer"
+                                >
+                                    {submitting ? 'posting...' : 'submit'}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setShowForm(false)
+                                        setStatusMessage(null)
+                                    }}
+                                    className="text-[var(--text)]/50 hover:text-[var(--text)] transition-colors cursor-pointer"
+                                >
+                                    cancel
+                                </button>
+
+                                {statusMessage && (
+                                    <span
+                                        className={statusMessage.type === 'error' ? 'text-red-500' : 'text-emerald-500'}
+                                    >
+                                        {statusMessage.text}
+                                    </span>
+                                )}
+                            </div>
+                        </form>
+                    )}
+                </div>
+            )}
         </div>
     )
 }
